@@ -1,0 +1,871 @@
+.one-product-page {
+    min-height: 100vh;
+    padding: 20px 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: background-color 0.5s ease;
+    overflow-x: hidden;
+}
+
+/* الحاوية الرئيسية بتصميم الـ Grid الإبداعي */
+.product-main-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr; /* توزيع غير متماثل لكسر الملل */
+    gap: 80px;
+    align-items: center;
+    max-width: 1300px;
+    width: 100%;
+    margin-top: 40px;
+}
+
+/* تنسيق الصورة بلمسة Floating & Glow */
+.product-image-section {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* إضافة خلفية دائرية خلف الصورة لتعزيز العمق */
+.product-image-section::before {
+    content: '';
+    position: absolute;
+    width: 120%;
+    height: 80%;
+    background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+    z-index: 0;
+}
+
+.main-product-img {
+    width: 100%;
+    max-height: 600px; /* زيادة المساحة لتعطي فخامة */
+    border-radius: 40px; /* زوايا أنعم */
+    box-shadow: 20px 40px 80px rgba(0,0,0,0.15);
+    object-fit: cover;
+    z-index: 1;
+    transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.main-product-img:hover {
+    transform: scale(1.03) translateY(-10px);
+}
+
+/* تنسيق النصوص وتوزيعها */
+.product-info-section {
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+}
+
+.product-title1 {
+    font-size: 4.5rem; /* خط ضخم وجريء */
+    font-family: 'Cinzel', serif;
+    line-height: 1.1;
+    margin-bottom: 25px;
+    letter-spacing: -2px;
+}
+
+.product-description12 {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    font-weight: 300;
+    max-width: 90%;
+    position: relative;
+    padding-left: 20px;
+}
+
+/* إضافة خط جانبي جمالي بجانب الوصف */
+.product-description12::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10%;
+    height: 80%;
+    width: 2px;
+    background-color: currentColor; /* سيأخذ لون الـ textColorProduct */
+    opacity: 0.3;
+}
+
+/* البيانات الثانوية بتصميم أنيق */
+.product-meta {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+}
+
+.product-meta span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.product-price1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 40px;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* الزر بتصميم حديث */
+.add-to-cart-btn {
+    width: fit-content;
+    padding: 22px 60px;
+    border: none;
+    border-radius: 15px; /* شكل عصري أكثر من الـ pill shape */
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: all 0.4s ease;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.add-to-cart-btn:hover {
+    letter-spacing: 3px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    transform: translateY(-3px);
+}
+
+
+
+
+
+
+/* حاوية العداد */
+.quantity-selector {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 25px;
+    padding: 5px 0;
+}
+
+/* أزرار الزائد والناقص */
+.qty-btn {
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 8px; /* حواف أنعم قليلاً */
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.qty-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    filter: brightness(1.1);
+}
+
+.qty-btn:active {
+    transform: translateY(0);
+}
+
+/* الرقم الذي بين الزرارين */
+.qty-number {
+    font-size: 1.8rem;
+    font-weight: 700;
+    min-width: 30px;
+    text-align: center;
+    user-select: none; /* لمنع تحديد النص عند الضغط السريع */
+    font-family: 'Playfair Display', serif; /* أو أي خط فخم تستخدمه */
+}
+
+/* السعر */
+.product-price1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 30px;
+    letter-spacing: -1px;
+}
+
+
+
+
+
+
+/* قسم طريقة الاستخدام */
+.usage-section {
+   
+    margin-top: 120px ;
+    padding: 0 20px;
+    position: relative;
+    width: 100%;
+    padding: 60px 0;
+    
+}
+
+
+.usage-title {
+    font-family: 'Cinzel', serif;
+    font-size: 4.5rem; /* جعلته أكبر قليلاً ليتناسب مع قوة البطاقات */
+    text-align: center;
+    margin-bottom: 60px !important;
+    letter-spacing: 12px;
+    text-transform: uppercase;
+    font-weight: 700;
+    
+    
+}
+
+
+.usage-steps-grid {
+    display: flex;
+    flex-wrap: nowrap;       /* منع العناصر من النزول لسطر جديد نهائياً */
+    gap: 40px;
+    /* عرض ثابت 90% لضمان مسافة يمين ويسار متساوية */
+    width: 90vw;  
+    /* التوسيط باستخدام البوزيشن */
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%); /* سحب العنصر لليسار بنصف عرضه ليتوسط الشاشة */
+    /* لضمان التوسيط الأفقي للعناصر داخل الفليكس */
+    justify-content: center; 
+    /* في حال كانت الكروت أكثر من عرض الشاشة، سيظهر سكرول أفقي بدلاً من النزول لأسفل */
+    overflow-x: auto; 
+    padding: 20px 0; /* مساحة علوية وسفلية بسيطة */
+    /* إخفاء السكرول بار ليظل التصميم فخماً */
+    scrollbar-width: none; /* لفايرفوكس */
+    overflow-y: hidden; /* يمنع السكرول العمودي نهائياً */
+    height: 450px;
+    
+}
+
+.usage-steps-grid::-webkit-scrollbar {
+    display: none; /* لكروم وسفاري */
+}
+
+
+
+
+/* كود إضافي لجعل التضليل يبدو كأنه ضبابي (Blur) */
+.usage-steps-grid::before,
+.usage-steps-grid::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 20%; /* عرض التضليل */
+  height: 100%;
+  z-index: 10;
+  pointer-events: none;
+  /* إضافة تأثير ضبابي خفيف على أطراف التضليل */
+  backdrop-filter: blur(1px); 
+}
+
+
+
+
+
+.step-card {
+    /* منع الكروت من الانكماش حتى تظل واضحة */
+    flex: 0 0 420px; 
+    max-width: 500px;
+    padding: 60px 45px;    /* زيادة التباعد الداخلي (Padding) */
+    border-radius: 30px;   /* زوايا أكثر نعومة */
+                      /* باقي تنسيقاتك كما هي */
+}
+
+
+/* بطاقة الخطوة */
+.step-card {
+    border: 1px solid; /* اللون يتحدد ديناميكياً من الـ JSX */
+    background: transparent;
+      position: relative;
+  
+    padding: 50px 35px; /* زيادة التباعد الداخلي للفخامة */
+    border-radius: 25px;
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border: none; /* ألغينا الحدود لأن الخلفية أصبحت ملونة */
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1); /* ظل خفيف للعمق */
+}
+
+
+
+.step-number {
+       font-family: 'Cinzel', serif;
+    font-size: 4.5rem;
+    font-weight: 900;
+    line-height: 1;
+    transition: opacity 0.3s ease;
+    margin-bottom: 10px;
+}
+
+
+.step-text {
+   font-size: 1.5rem;      /* زيادة من 1.2 لـ 1.5 لسهولة قراءة فائقة */
+    line-height: 1.8;       /* زيادة التباعد بين الأسطر لراحة العين */
+    font-weight: 500;
+    letter-spacing: 0.5px;  /* لمسة بسيطة لجمال النص */
+}
+
+
+.step-line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 4px;
+    transition: width 0.5s ease;
+    border-radius: 0 0 20px 20px;
+}
+
+/* تأثير الـ Hover الإبداعي */
+.step-card:hover {
+    transform: translateY(-15px) scale(1.02); /* حركة صعود مع تكبير بسيط */
+    box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+}
+.step-card:hover .step-number {
+    opacity: 1;
+    transform: translateX(5px); /* حركة بسيطة للرقم عند الـ hover */
+}
+
+.step-card:hover .step-line {
+    width: 100%;
+}
+
+
+/* تنعيم حركة الأرقام */
+.step-number {
+    transition: all 0.4s ease;
+}
+/* تأثير الـ Hover الإبداعي */
+.step-card:hover {
+    transform: translateY(-15px) scale(1.02); /* حركة صعود مع تكبير بسيط */
+    box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+}
+
+.step-card:hover .step-number {
+    opacity: 1;
+    transform: translateX(5px); /* حركة بسيطة للرقم عند الـ hover */
+}
+
+.step-card:hover .step-line {
+    width: 100%;
+}
+
+/* تنعيم حركة الأرقام */
+.step-number {
+    transition: all 0.4s ease;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* قسم التقييمات Luxury */
+    .reviews-section {
+      padding: 100px 10%;
+      text-align: left;
+     
+    }
+
+    .reviews-main-title1 {
+      font-family: 'Cinzel', serif;
+      font-size: 3.5rem;
+      text-transform: uppercase;
+      letter-spacing: 8px;
+      margin-bottom: 80px;
+      text-align: center;
+        
+    }
+
+    .reviews-container {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .review-item {
+      padding: 20px 0;
+      transition: transform 0.3s ease;
+    }
+
+    .review-item:hover {
+      transform: translateX(15px);
+    }
+
+    .review-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .review-user {
+      font-family: 'Cinzel', serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+
+    .review-stars {
+      font-size: 0.9rem;
+      display: flex;
+      gap: 5px;
+    }
+
+    .review-comment {
+      font-size: 1.3rem;
+      line-height: 1.8;
+      font-style: italic;
+      max-width: 80%;
+      opacity: 0.9;
+    }
+
+    .review-divider {
+      height: 1px;
+      width: 100%;
+      margin-top: 30px;
+    }
+
+
+
+
+
+
+
+
+    /* Tablet & iPad Pro Portrait (1024px) */
+@media (max-width: 1024px) {
+    .one-product-page {
+        padding: 0 4%;
+    }
+
+    .product-main-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    /* قسم الصورة */
+    .product-image-section {
+        width: 100%;
+        padding: 60px 20px;
+        position: relative;
+        background: rgba(255, 255, 255, 0.04);
+        backdrop-filter: blur(25px);
+        -webkit-backdrop-filter: blur(25px);
+        border-radius: 40px;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        background-image: 
+            radial-gradient(at 0% 0%, rgba(212, 175, 55, 0.08) 0, transparent 50%), 
+            radial-gradient(at 100% 100%, rgba(255, 255, 255, 0.05) 0, transparent 50%);
+  
+  
+        }
+
+    .main-product-img {
+        max-height: 380px;
+        width: auto;
+        object-fit: contain;
+        z-index: 2;
+        filter: drop-shadow(0 30px 40px rgba(0,0,0,0.3));
+        
+    }
+.meta{
+
+    width: 100%;
+    height: fit-content !important;
+    display: flex;
+   justify-content: space-between;
+    z-index: 1;
+}
+    /* --- تنسيق قسم النصوص المحدث --- */
+    .product-info-section {
+        display: flex !important;
+        flex-direction: column !important; /* ترتيب رأسي صارم */
+        justify-content: flex-start !important;
+        align-items: flex-start !important; /* محاذاة لليسار */
+        text-align: left !important; 
+    }
+
+    .product-title1 {
+        order: 1 !important;
+        flex: none !important;
+        font-size: 2.8rem !important;
+        
+        margin-bottom: 20px !important;
+        width: 100%;
+  
+         text-align: center !important;
+    }
+
+    .price-meta-group {
+        order: 2 !important;
+        flex: none !important;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 20px !important;
+        width: 100%;
+    }
+
+    .product-description12 {
+        order: 3 !important;
+        flex: none !important;
+        font-size: 1.1rem;
+        padding-left: 0 !important; /* محاذاة لليسار */
+        margin-bottom: 25px !important;
+        border-left: none !important;
+        max-width: 100% !important;
+    }
+
+    /* العداد - فوق الزر مباشرة */
+    .quantity-selector {
+        order: 4 !important;
+        flex: none !important;
+        display: flex !important;
+        justify-content: flex-start !important; /* محاذاة لليسار */
+        align-items: center !important;
+        width: 100% !important;
+        gap: 20px !important;
+        margin-bottom: 20px !important;
+    }
+
+    .qty-btn {
+        width: 40px !important;
+        height: 40px !important;
+    }
+
+    .qty-number {
+        font-size: 1.5rem !important;
+    }
+
+    /* زر الإضافة - في الأسفل */
+    .add-to-cart-btn {
+        order: 5 !important;
+        flex: none !important;
+        width: 100% !important; /* عرض كامل لسهولة الضغط */
+        margin-top: 10px !important;
+        justify-content: center;
+        padding: 20px !important;
+        border-radius: 12px;
+    }
+
+  
+
+
+
+
+   
+    /* 4. قسم طريقة الاستخدام (Usage Section) */
+
+
+    .usage-section{
+        margin-top: 180px;
+    }
+    .usage-title{
+       
+        padding-top: 90px;
+            font-size: 3rem;
+        letter-spacing: 8px;
+       
+    }
+   
+
+    .usage-steps-grid {
+        justify-content: flex-start; /* السماح بالتمرير لليسار */
+        padding: 20px 5%;
+        width: 100vw;
+        gap: 30px;
+    }
+
+    .step-card {
+        flex: 0 0 350px; /* تصغير عرض الكارت قليلاً ليناسب شاشة الآيباد */
+        padding: 40px 30px;
+    }
+
+    .step-number {
+        font-size: 3.5rem;
+    }
+
+    .step-text {
+        font-size: 1.25rem;
+    }
+
+
+
+
+    /* 5. قسم التقييمات (Reviews) */
+    .reviews-section {
+        padding: 80px 5%;
+       
+        margin-left: 20px !important;
+        width: 100vw;
+    }
+
+    .reviews-main-title1 {
+        font-size: 2.5rem;
+        letter-spacing: 5px;
+        margin-bottom: 70px !important;
+    }
+
+    .review-comment {
+        max-width: 100%; /* استغلال عرض الشاشة */
+        font-size: 1.1rem;
+    }
+
+    .review-user {
+        font-size: 1.4rem;
+    }
+    
+    .reviews-section {
+        padding:0;
+        margin-left: 0px !important;
+        width: 100vw;
+       
+    }
+
+
+
+    .reviews-main-title1 {
+        font-size: 2rem;
+
+    }
+
+    .review-user {
+        font-size: 1.2rem;
+     
+    }
+
+    .review-comment {
+        font-size: 1rem;
+        
+    }
+    
+    
+}
+
+/* Small Tablets & Large Mobiles (720px) */
+@media (max-width: 720px) {
+    
+    .one-product-page {
+        padding: 0 3%;
+    }
+
+    /* 1. قسم الصورة - تصغير الارتفاع فقط */
+    .product-image-section {
+        padding: 30px 15px;
+        border-radius: 25px;
+         
+    }
+
+    .main-product-img {
+        max-height: 280px; 
+    }
+
+    /* 2. قسم النصوص - الحفاظ على الـ Flex العرضي مع تصغير الخط */
+    .product-title1 {
+        font-size: 2.2rem; /* تصغير */
+        margin-bottom: 20px;
+       
+    }
+
+    .product-price1 {
+        font-size: 2rem; /* تصغير */
+    }
+
+    .product-meta {
+        font-size: 0.7rem; /* تصغير */
+        gap: 10px;
+        
+    }
+
+    .product-description {
+        font-size: 0.95rem; /* تصغير */
+        padding-left: 15px; /* تقليل المسافة الجانبية */
+    }
+
+    .add-to-cart-btn {
+        padding: 18px;
+        font-size: 1rem;
+    }
+
+
+
+
+  /* 3. قسم الخطوات - تصغير مكثف للكروت (Compact Version) */
+    .usage-title {
+        font-size: 2.2rem; /* تصغير إضافي للعنوان */
+        letter-spacing: 5px;
+        margin-top: -100px; /* سحب للأعلى لتقليل الفراغ */
+       
+    }
+
+    .usage-steps-grid {
+        height: 320px; /* تقليل ارتفاع الحاوية الكلية */
+        gap: 20px;
+    }
+
+    .step-card {
+        flex: 0 0 240px; /* تصغير عرض الكارت لـ 240px فقط */
+        padding: 25px 20px; /* تقليل التباعد الداخلي */
+        border-radius: 20px;
+        height: auto;
+    }
+
+    .step-number {
+        font-size: 2rem; /* تصغير الرقم */
+        margin-bottom: 5px;
+    }
+
+    .step-text {
+        font-size: 0.9rem; /* تصغير النص ليكون أرق وأشيك */
+        line-height: 1.5;
+        letter-spacing: 0.3px;
+    }
+
+    .step-line {
+        height: 3px; /* تنحيف الخط السفلي */
+    }
+
+
+
+
+
+    /* 4. قسم التقييمات - تصغير الخطوط */
+
+
+}
+
+
+/* Mobile View (490px) */
+@media (max-width: 490px) {
+    
+    .one-product-page {
+        padding: 0 4%; /* زيادة الهامش قليلاً لراحة العين */
+    }
+
+    /* 1. قسم الصورة - تصغير إضافي */
+    .product-image-section {
+        padding: 20px 10px;
+        border-radius: 15px;
+        margin-top: 10px;
+    }
+
+    .main-product-img {
+        max-height: 220px; /* تصغير الصورة لتناسب طول الشاشة */
+    }
+
+    /* 2. قسم النصوص - تصغير مع الحفاظ على التوزيع */
+    .product-title1 {
+        font-size: 1.6rem; /* تصغير كبير للعنوان */
+        margin-bottom: 15px;
+        letter-spacing: -0.5px;
+    }
+
+    .product-price1 {
+        font-size: 1.5rem; /* تصغير السعر */
+    }
+
+    .product-meta {
+        font-size: 0.6rem; /* تصغير الميتا (Icons & Text) */
+        gap: 8px;
+    }
+
+    .product-description12 {
+        font-size: 0.8rem; /* نص رقيق جداً */
+        padding-left: 10px; /* تقليل الفاصل الجانبي */
+        line-height: 1.4;
+    }
+
+    .add-to-cart-btn {
+        padding: 15px;
+        font-size: 0.9rem;
+        border-radius: 10px;
+        width: 100%; /* ضمان العرض الكامل */
+    }
+
+    /* 3. قسم الخطوات - تصغير مخصص للموبايل */
+    .usage-title {
+        font-size: 1.5rem;
+        letter-spacing: 3px;
+        margin-top: -120px; /* تقليل المسافة بين الأقسام */
+    }
+
+    .usage-steps-grid {
+        height: 280px; /* تقليل الارتفاع الكلي */
+        gap: 15px;
+    }
+
+    .step-card {
+        flex: 0 0 200px; /* عرض الكارت 200px فقط ليناسب شاشة الموبايل */
+        padding: 20px 15px;
+        border-radius: 15px;
+    }
+
+    .step-number {
+        font-size: 1.6rem;
+    }
+
+    .step-text {
+        font-size: 0.75rem; /* نص الخطوات صغير جداً وأنيق */
+        line-height: 1.4;
+    }
+
+    /* 4. قسم التقييمات */
+    .reviews-main-title1 {
+        font-size: 1.5rem;
+        letter-spacing: 2px;
+        margin-top: -60px;
+        
+    }
+
+    .review-user {
+        font-size: 1rem;
+       
+    }
+
+    .review-comment {
+        font-size: 0.85rem;
+        line-height: 1.5;      
+    }
+    
+
+/* 1. تعديل الحاوية الأب لضمان استقلالية طول الكروت */
+.usage-steps-grid {
+    display: flex !important;
+    flex-wrap: nowrap !important; /* منع النزول لسطر جديد */
+    align-items: flex-start !important; /* هام جداً: يجعل كل كارت يأخذ طوله الخاص فقط بناءً على محتواه */
+    gap: 10px !important;
+    overflow-x: auto;
+    padding: 20px 5%;
+}
+
+/* 2. تعديل الكارت الصغير والنحيف */
+.step-card {
+    flex: 0 0 320px !important; /* عرض 120px مناسب جداً للنحافة والفخامة */
+    width: 320px !important;
+}
+}

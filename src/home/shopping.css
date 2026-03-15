@@ -1,0 +1,608 @@
+/* الألوان الأساسية */
+:root {
+    --gold: linear-gradient(135deg, #d4af37 0%, #f9f295 45%, #b38728 70%, #f9f295 100%);
+    --dark-gold: #b38728;
+    --glass-bg: rgba(255, 255, 255, 0.4);
+}
+
+.shopping-page {
+    min-height: 100vh;
+    padding: 120px 8%;
+    font-family: 'Cinzel', serif;
+}
+
+.gold-gradient-text {
+    background: var(--gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 3.5rem;
+    text-align: center;
+    letter-spacing: 5px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+   
+}
+
+.items-count {
+    text-align: center;
+    color: var(--dark-gold);
+    letter-spacing: 3px;
+    margin-bottom: 50px;
+  
+}
+
+.luxury-grid {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    width: 100%;
+   
+}
+
+.items-column {
+    flex: 1.8;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.summary-column {
+    flex: 1;
+    min-width: 350px;
+}
+
+.luxury-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 20px;
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 25px;
+    position: relative; /* ضروري لتموضع زر X */
+    transition: transform 0.4s ease;
+    
+}
+
+/* زر الحذف الصغير */
+.remove-item-btn {
+    position: absolute;
+    top: 15px;
+    left: 15px; /* التموضع في اليسار كما طلبت */
+    background: transparent;
+    border: none;
+    color: var(--dark-gold);
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.remove-item-btn:hover {
+    color: #ff4d4d;
+    transform: rotate(90deg) scale(1.2);
+}
+
+.luxury-card:hover {
+    transform: translateX(15px);
+    border-color: #d4af37;
+    box-shadow: -10px 0 20px rgba(212, 175, 55, 0.1);
+}
+
+.card-img-wrapper {
+    width: 120px;
+    height: 120px;
+    background: white;
+    border-radius: 15px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    flex-shrink: 0;
+}
+
+.card-img-wrapper img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.card-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-info h3 {
+    font-size: 1.6rem;
+    color: var(--dark-gold);
+    margin-bottom: 5px;
+     
+}
+
+.item-section {
+    color: var(--dark-gold);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    margin-bottom: 15px;
+}
+
+.qty-price-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+/* تصميم العداد الذهبي الفاخر */
+.cart-qty-selector {
+    display: flex;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--dark-gold);
+    border-radius: 50px;
+    padding: 5px 15px;
+    gap: 15px;
+}
+
+.cart-qty-selector button {
+    background: transparent;
+    border: none;
+    color: var(--dark-gold);
+    cursor: pointer;
+    font-size: 1rem;
+    transition: transform 0.2s;
+}
+
+.cart-qty-selector button:active { transform: scale(0.8); }
+
+.qty-val {
+    font-weight: bold;
+    color: #000;
+    min-width: 20px;
+    text-align: center;
+  
+}
+
+.gold-price {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #000;
+}
+
+/* ملخص الطلب */
+.summary-sticky-card {
+    position: sticky;
+    top: 100px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border: 2px solid #d4af37;
+    border-radius: 30px;
+    padding: 40px;
+    text-align: center;
+}
+
+.summary-title {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+    padding-bottom: 15px;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+.divider-gold {
+    height: 1px;
+    background: var(--gold);
+    margin: 25px 0;
+    
+}
+
+.grand-total {
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: var(--dark-gold);
+}
+
+.complimentary {
+    color: #2ecc71;
+    font-style: italic;
+}
+
+.checkout-btn {
+    width: 100%;
+    margin-top: 30px;
+    padding: 20px;
+    background: var(--gold);
+    border: none;
+    border-radius: 50px;
+    font-family: 'Cinzel', serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+
+    
+}
+
+.checkout-btn:hover {
+  
+    box-shadow: 0 15px 30px rgba(212, 175, 55, 0.4);
+    transform: translateY(-5px);
+}
+
+.empty-cart-container {
+    text-align: center;
+    padding: 150px 0;
+}
+/* تعديلات الأحجام للشاشات المتوسطة والكبيرة (1300px وأقل) */
+@media (max-width: 1300px) {
+    .shopping-page {
+        padding: 100px 5%; /* تقليل الهوامش الجانبية */
+    }
+
+    .gold-gradient-text {
+        font-size: 2.8rem; /* تصغير العنوان الرئيسي */
+        letter-spacing: 3px;
+    }
+
+    .luxury-grid {
+        gap: 25px; /* تقليل المسافة بين العمودين */
+    }
+
+    .luxury-card {
+        padding: 18px; /* تقليل الحشو داخل الكارت */
+        gap: 15px;
+    }
+
+    .card-img-wrapper {
+        width: 100px; /* تصغير غلاف الصورة */
+        height: 100px;
+    }
+
+    .card-info h3 {
+        font-size: 1.3rem; /* تصغير اسم المنتج */
+    }
+
+    .gold-price {
+        font-size: 1.2rem; /* تصغير سعر المنتج */
+    }
+
+    /* تعديل العداد */
+    .cart-qty-selector {
+        padding: 4px 12px;
+        gap: 10px;
+    }
+
+    .qty-val {
+        font-size: 0.9rem;
+    }
+
+    /* تعديل ملخص الطلب */
+    .summary-column {
+        min-width: 300px; /* تقليل العرض الأدنى للملخص */
+    }
+
+    .summary-sticky-card {
+        padding: 30px 20px;
+    }
+
+    .summary-title {
+        font-size: 1.6rem;
+        margin-bottom: 20px;
+    }
+
+    .grand-total {
+        font-size: 1.5rem;
+    }
+
+    .checkout-btn {
+        padding: 15px;
+        font-size: 0.9rem;
+    }
+}
+
+/* --- التجاوب مع الشاشات (Responsive) --- */
+/* --- التجاوب عند 1024px (استعادة الضخامة مع التوزيع الرأسي) --- */
+@media (max-width: 1024px) {
+    .luxury-grid {
+        flex-direction: column; /* تحويل التوزيع لرأسي */
+        gap: 30px;
+    }
+    
+    .items-column, .summary-column {
+        width: 100%;
+        flex: none;
+        
+    }
+
+    .summary-column {
+        order: -1; /* الملخص يظهر في الأعلى أولاً */
+        margin-bottom: 30px;
+        min-width: unset;
+    }
+
+    /* استعادة الأحجام الكبيرة للفخامة */
+    .gold-gradient-text {
+        font-size: 3rem; /* حجم كبير وواضح */
+        letter-spacing: 4px;
+    }
+
+    .luxury-card {
+        padding: 25px; /* عودة الحشو الواسع */
+        gap: 25px;
+    }
+
+    .card-img-wrapper {
+        width: 120px; /* عودة الصورة للحجم الكبير */
+        height: 120px;
+    }
+
+    .card-info h3 {
+        font-size: 1.6rem; /* عودة الخط الكبير */
+    }
+
+    .gold-price {
+        font-size: 1.4rem;
+    }
+
+    .summary-sticky-card {
+        padding: 40px;
+        position: relative; /* إلغاء الـ sticky في الموبايل لسهولة التصفح */
+        top: 0;
+    }
+
+    .checkout-btn {
+        padding: 20px;
+        font-size: 1.1rem;
+    }
+}
+
+
+
+
+
+/* --- التجاوب عند 670 بكسل (تحسين تجربة الموبايل) --- */
+@media (max-width: 670px) {
+    .shopping-page {
+        padding: 80px 4%; /* تقليل الحواف الجانبية */
+    }
+
+    .gold-gradient-text {
+        font-size: 2rem; /* تصغير العنوان ليتناسب مع عرض الموبايل */
+        letter-spacing: 2px;
+    }
+
+    .items-count {
+        font-size: 0.8rem;
+        margin-bottom: 30px;
+    }
+
+.luxury-card {
+        padding: 12px; /* تقليل الحشو الداخلي */
+        gap: 12px;     /* تقليل المسافة بين الصورة والنص */
+        border-radius: 15px;
+    }
+
+    .card-img-wrapper {
+        width: 80px;  /* تصغير حجم الصورة */
+        height: 80px;
+        padding: 5px;
+    }
+
+    .card-info h3 {
+        font-size: 1rem; /* تصغير اسم المنتج */
+        margin-bottom: 2px;
+    }
+
+    .item-section {
+        font-size: 0.65rem; /* تصغير النص الفرعي */
+        margin-bottom: 8px;
+    }
+
+    .qty-price-row {
+        gap: 5px; /* تقريب العداد من السعر */
+    }
+
+    /* تصغير العداد الذهبي */
+    .cart-qty-selector {
+        padding: 3px 8px;
+        gap: 8px;
+    }
+
+    .cart-qty-selector button {
+        font-size: 0.8rem;
+    }
+
+    .qty-val {
+        font-size: 0.8rem;
+        min-width: 15px;
+    }
+
+    .gold-price {
+        font-size: 1rem; /* تصغير السعر */
+    }
+
+    .remove-item-btn {
+        font-size: 0.9rem;
+        top: 8px;
+        left: 8px;
+    }
+
+    /* ملخص الطلب في الموبايل */
+    .summary-sticky-card {
+        padding: 25px 15px;
+    }
+
+    .summary-title {
+        font-size: 1.4rem;
+    }
+
+    .summary-row {
+        font-size: 0.95rem;
+    }
+
+    .grand-total {
+        font-size: 1.4rem;
+    }
+
+    .checkout-btn {
+        padding: 18px;
+        font-size: 0.9rem;
+        border-radius: 15px; /* حواف أنعم قليلاً للموبايل */
+    }
+}
+
+/* --- التجاوب عند 420 بكسل (أجهزة الموبايل الصغيرة جداً) --- */
+@media (max-width: 482px) {
+    .shopping-page {
+        padding: 60px 2%; /* تقليل الهوامش الجانبية لأقصى درجة */
+    }
+
+    .gold-gradient-text {
+        font-size: 1.5rem; /* تصغير العنوان ليناسب عرض الشاشة الضيق */
+        letter-spacing: 1px;
+    }
+
+    .luxury-card {
+        padding: 10px; /* تقليل الحشو الداخلي جداً */
+        gap: 8px;      /* تضييق المسافة بين الصورة والمحتوى */
+        border-radius: 12px;
+        margin-bottom: 15px;
+    }
+
+    .card-img-wrapper {
+        width: 65px;  /* أصغر حجم ممكن للصورة للحفاظ على المساحة للنص */
+        height: 65px;
+        padding: 3px;
+    }
+
+    .card-info h3 {
+        font-size: 0.9rem; /* خط صغير وواضح لاسم المنتج */
+        white-space: nowrap; /* منع النص من الانقسام لسطرين إذا كان قصيراً */
+        overflow: hidden;
+        text-overflow: ellipsis; /* إضافة نقاط في حال كان الاسم طويلاً جداً */
+    }
+
+    .item-section {
+        font-size: 0.6rem;
+        margin-bottom: 5px;
+    }
+
+    /* تعديل منطقة العداد والسعر */
+    .qty-price-row {
+        gap: 3px;
+    }
+
+    .cart-qty-selector {
+        padding: 2px 6px;
+        gap: 6px;
+    }
+
+    .cart-qty-selector button {
+        font-size: 0.7rem;
+    }
+
+    .qty-val {
+        font-size: 0.75rem;
+        min-width: 12px;
+    }
+
+    .gold-price {
+        font-size: 0.9rem; /* تصغير السعر ليتناسب مع حجم الخط العام */
+    }
+
+    .remove-item-btn {
+        font-size: 0.8rem;
+        top: 5px;
+        left: 5px;
+    }
+
+    /* ملخص الطلب */
+    .summary-sticky-card {
+        padding: 20px 10px;
+    }
+
+    .summary-title {
+        font-size: 1.2rem;
+    }
+
+    .summary-row {
+        font-size: 0.8rem;
+    }
+
+    .grand-total {
+        font-size: 1.2rem;
+    }
+
+    .checkout-btn {
+        padding: 14px;
+        font-size: 0.8rem;
+        gap: 8px;
+    }
+}
+
+
+
+
+
+
+
+/* تنسيق الجملة التسويقية */
+.marketing-luxury-text {
+    text-align: center;
+    color: var(--dark-gold);
+    font-size: 1.1rem;
+    line-height: 1.8;
+    letter-spacing: 1px;
+    margin-top: 20px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.8;
+}
+
+/* حاوية الصورة والزر */
+.empty-cart-visual {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    animation: fadeInContainer 1.2s ease-out;
+}
+
+/* تنسيق الصورة الفاخرة */
+.empty-cart-img {
+    width: 100%;
+    max-width: 500px; /* حجم الصورة */
+    height: auto;
+    border-radius: 30px;
+   
+    
+    margin-bottom: 40px;
+    transition: transform 0.5s ease;
+    background: none;
+}
+
+.empty-cart-img:hover {
+    transform: scale(1.02);
+}
+
+
+

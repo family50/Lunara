@@ -1,0 +1,761 @@
+/* الخط العام للصفحة */
+body, .review-section {
+  font-family: 'Cinzel', serif;
+}
+
+/* قسم الصور */
+.review-section {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+   justify-content: space-between; /* <-- توزيع المسافة بين البطاقات */
+width: 80%; /* أو 100% حسب المكان اللي عايز تحطه فيه */
+  padding: 20px;
+  
+  /* توسيط أفقياً */
+  margin: 130px auto 0 auto;  /* 50px من فوق لتكون نازلة شويه، auto لليسار واليمين لتوسيط */
+}
+
+/* كل بطاقة صورة */
+.review-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.review-card img {
+  width: 160px;   /* حجم الصورة صغير */
+  height: 160px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+
+.review-card p {
+  margin-top: 8px;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+/* حركة عند hover */
+.review-card:hover img {
+  transform: scale(1.1);
+
+}
+
+
+/* شاشة كبيرة جدًا */
+@media  (max-width: 1170px) {
+  .review-section {
+    width: 90%; /* يعطي المساحة أكبر */
+    justify-content: space-around; /* المسافات موزعة كويس */
+  
+  }
+
+ 
+  .review-card img {
+    width: 130px; /* أصغر حجم للصورة */
+    height: 130px;
+  }
+
+  .review-card p {
+    font-size: 18px; /* أصغر شويه للكتابة */
+  }
+}
+@media  (max-width: 1040px){
+/* قسم الصور */
+.review-section {
+  /* توسيط أفقياً */
+  margin: 100px auto 0 auto;  
+}
+}
+/* شاشة أصغر من 870px */
+@media (max-width: 870px) {
+  .review-section {
+    width: 95%; /* توسيط وتوسيع المساحة قليلاً */
+    justify-content: space-around; /* المسافات موزعة */
+    padding: 10px; /* تقليل المساحة الداخلية */
+    margin: 80px auto 0 auto; /* تقليل المسافة من فوق */
+  }
+
+  .review-card img {
+    width: 100px; /* تصغير الصورة */
+    height: 100px;
+  }
+
+  .review-card p {
+    font-size: 16px; /* تصغير النص */
+    margin-top: 6px; /* تقليل المسافة فوق النص */
+  }
+}
+
+/* شاشة أصغر من 660px */
+@media (max-width: 660px) {
+  .review-section {
+    width: 95%; /* توسيط وتوسيع المساحة قليلاً */
+    justify-content: space-around; /* توزيع المسافات */
+    padding: 8px; /* تقليل padding */
+    margin: 90px auto 0 auto; /* تقليل المسافة من فوق */
+  
+  }
+
+  .review-card img {
+    width: 80px; /* تصغير الصورة أكتر */
+    height: 80px;
+  }
+
+  .review-card p {
+    font-size: 14px; /* تصغير النص */
+    margin-top: 4px; /* تقليل المسافة فوق النص */
+  }
+}
+
+/* شاشة أصغر من 530px */
+@media (max-width: 530px) {
+  .review-section {
+    width: 95%; /* تقريبًا كامل عرض الشاشة */
+    justify-content: space-around; /* توزيع المسافات */
+    padding: 6px; /* تقليل padding */
+    margin: 90px auto 0 auto; /* تقليل المسافة من فوق */
+    
+  }
+
+  .review-card img {
+    width: 60px; /* أصغر حجم للصورة */
+    height: 60px;
+  }
+
+  .review-card p {
+    font-size: 12px; /* أصغر حجم للنص */
+    margin-top: 3px; /* تقليل المسافة فوق النص */
+  }
+}
+
+/* شاشة أصغر من 400px */
+@media (max-width: 400px) {
+  .review-section {
+    width: 95%; /* تقريبًا كامل عرض الشاشة */
+    justify-content: space-around; /* توزيع المسافات */
+    padding: 4px; /* تقليل padding */
+    margin: 80px auto 0 auto; /* تقليل المسافة من فوق */
+    gap: 6px; /* تقليل الفراغ بين البطاقات */
+  }
+
+  .review-card img {
+    width: 50px; /* حجم صغير جدًا للصورة */
+    height: 50px;
+  }
+
+  .review-card p {
+    font-size: 10px; /* حجم نص صغير جدًا */
+    margin-top: 2px; /* تقليل المسافة فوق النص */
+  }
+}
+
+@media (min-width: 1750px){
+.review-card img {
+  width: 190px;   /* حجم الصورة صغير */
+  height: 190px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.products-page-title {
+  text-align: center;              /* في النص */
+  font-size: 64px;                 /* كبير */
+  font-weight: 700;                /* تقيل */
+  letter-spacing: 3px;             /* مسافات أنيقة */
+  text-transform: uppercase;       /* كله كابيتال */
+      color: #D4AF37;
+     background: linear-gradient(to right, #D4AF37 20%, #F7EF8A 50%, #D4AF37 80%);
+  -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+  margin: 80px 0 120px;            /* مسافات */
+  position: relative;              /* علشان الـ ::after */
+  transition: all 0.4s ease;       /* سلاسة */
+  margin-bottom: -90px;
+}
+
+/* خط تحتي بسيط للـ luxury */
+.products-page-title::after {
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 2px;
+  background: #D4AF37;
+  opacity: 0.7;
+  transition: all 0.4s ease;
+}
+
+/* Hover effect */
+.products-page-title:hover {
+                 /* درجة أفتح */
+  letter-spacing: 6px;             /* حركة ناعمة */
+}
+
+.products-page-title:hover::after {
+  width: 180px;                    /* الخط يكبر */
+
+}
+
+
+
+
+
+.category-section {
+  margin: 160px 0;
+
+}
+.category-section:nth-of-type(2),
+.category-section:nth-of-type(3),
+.category-section:nth-of-type(4),
+.category-section:nth-of-type(5) {
+  margin-top: -150px;
+}
+.category-section {
+  position: relative;       /* علشان ::after يتحرك بالنسبة للسكشن */
+
+  padding: 0 20px 60px;     /* مسافة تحت علشان الخط */
+}
+
+/* الخط تحت كل قسم */
+
+.category-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  
+}
+.category-header h2{
+font-size: 34px;
+}
+/* الخط تحت كل قسم */
+
+.arrows button {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.3);
+  color: white;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  
+   
+}
+
+.category-slider {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  scroll-behavior: smooth;
+  overflow-x: auto; /* تمرير أفقي */
+  overflow-y: hidden; /* منع الرأسي */
+}
+.category-slider::-webkit-scrollbar { /* شريط التمرير */
+  display: none; /* إخفاءه */
+}
+
+.mini-card {
+  min-width: 250px;
+  text-align: center;
+  border-radius: 25px;
+}
+
+.mini-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.mini-card p {
+  margin-top: 10px;
+  font-weight: bold;
+}
+.header-buttons {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* زر View Products */
+.go-products-btn {
+  padding: 10px 26px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+    border-radius: 8px;
+}
+
+.go-products-btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+}
+
+/* الأسهم */
+.arrows {
+  display: flex;
+  gap: 8px;
+}
+
+.arrows button {
+  border: none;
+  border-radius: 8px;
+  width: 42px;
+  height: 42px;
+  font-size: 22px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.arrows button:hover {
+  transform: scale(1.1);
+  filter: brightness(1.1);
+}
+
+
+
+
+
+.mini-card {
+  position: relative;
+  min-width: 250px;
+  text-align: center;
+  border-radius: 12px;
+}
+
+.image-wrapper {
+  position: relative;  /* عشان الزر يكون مطلق بالنسبة للصورة */
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 12px;
+}
+
+/* زر داخل الصورة تحت على اليمين */
+.product-btn {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: var(--primary);    /* لون الباك جراوند primary */
+  color: var(--dark);           /* النص dark */
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.product-btn:hover {
+  background: var(--dark);
+  color: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+}
+
+/* اسم المنتج */
+.mini-card p {
+  margin-top: 10px;
+  font-weight: bold;
+  color: var(--dark);
+}
+
+/* التقييم */
+.mini-card span {
+  color: var(--dark);
+}
+.go-products-btn .full-text {
+  display: inline;
+}
+.go-products-btn .short-text {
+  display: none;
+}
+
+/* تصغير كل حاجة عند 1280px */
+@media screen and (max-width: 1280px) {
+  .products-page-title {
+    font-size: 48px;          /* أصغر شويه */
+    margin: 60px 0 80px;
+      margin-bottom: -90px;
+  }
+
+  .category-header h2 {
+    font-size: 28px;          /* أصغر عنوان القسم */
+  }
+
+  .mini-card {
+    min-width: 200px;         /* أصغر الكروت */
+    border-radius: 10px;
+  }
+
+  .image-wrapper {
+    height: 200px;            /* أصغر صورة */
+  }
+
+  .product-btn {
+    padding: 6px 12px;        /* أصغر زر داخل الصورة */
+    font-size: 12px;
+  }
+
+  .go-products-btn {
+    padding: 8px 20px;        /* أصغر زر صفحة المنتجات */
+    font-size: 12px;
+  }
+
+  .arrows button {
+    width: 36px;
+    height: 36px;
+    font-size: 20px;
+  }
+
+  .category-section::after {
+    width: 60vw;              /* الخط تحت السكشن أصغر */
+  }
+}
+
+
+/* تصغير كل شيء عند 1000px */
+@media screen and (max-width: 1000px) {
+  .products-page-title {
+    font-size: 36px;          /* أصغر عنوان صفحة */
+    margin: 40px 0 60px;
+      margin-bottom: -50px;
+  }
+  .category-section {
+  margin: 130px 0;
+
+}
+.category-section:nth-of-type(2),
+.category-section:nth-of-type(3),
+.category-section:nth-of-type(4),
+.category-section:nth-of-type(5) {
+  margin-top: -130px;
+}
+
+
+
+/* الخط تحت كل قسم */
+.category-section::after {
+  bottom: 20px;               /* تحت السكشن */
+}
+
+  .category-header h2 {
+    font-size: 22px;          /* أصغر عنوان القسم */
+  }
+
+  .mini-card {
+    min-width: 180px;         /* أصغر الكروت */
+    border-radius: 8px;
+  }
+
+  .image-wrapper {
+    height: 180px;            /* أصغر الصور */
+  }
+
+  .product-btn {
+    padding: 5px 10px;        /* أصغر زر داخل الصورة */
+    font-size: 11px;
+  }
+
+ 
+
+  .arrows button {
+    width: 32px;
+    height: 32px;
+    font-size: 18px;
+  }
+
+  .category-section::after {
+    width: 50vw;              /* الخط تحت السكشن أصغر */
+  }
+
+  .mini-card p {
+    font-size: 14px;          /* نص أصغر للمنتج */
+  }
+
+  .mini-card span {
+    font-size: 12px;          /* نص أصغر للتقييم */
+  }
+}
+
+
+/* تصغير كل شيء عند 740px */
+@media screen and (max-width: 740px) {
+  .products-page-title {
+    font-size: 28px;          /* عنوان أصغر */
+    margin: 30px 0 40px;
+    margin-bottom: -60px;
+  }
+
+
+  .category-header h2 {
+    font-size: 18px;          /* عنوان القسم أصغر */
+  }
+
+  .category-section:nth-of-type(2),
+.category-section:nth-of-type(3),
+.category-section:nth-of-type(4),
+.category-section:nth-of-type(5) {
+  margin-top: -135px;
+}
+
+  .mini-card {
+    min-width: 140px;         /* أصغر الكروت */
+    border-radius: 12px;
+  }
+
+  .image-wrapper {
+    height: 140px;            /* أصغر الصور */
+  }
+
+  .product-btn {
+    padding: 4px 8px;         /* زر أصغر داخل الصورة */
+    font-size: 10px;
+    margin: 0 -6px -5px 0;
+  }
+
+  .go-products-btn {
+    padding: 7px 15px;        /* زر صفحة المنتجات أصغر */
+    font-size: 13px;
+  }
+
+  .arrows button {
+    width: 28px;
+    height: 28px;
+    font-size: 16px;
+  }
+
+  .category-section::after {
+    width: 60%;               /* الخط تحت السكشن أصغر */
+    bottom: 30px;
+  }
+
+  .mini-card p {
+    font-size: 12px;          /* نص المنتج أصغر */
+  }
+
+  .mini-card span {
+    font-size: 10px;          /* نص التقييم أصغر */
+  }
+}
+
+
+
+
+
+/* تصغير كل شيء عند 660px */
+@media screen and (max-width: 660px) {
+  .products-page-title {
+    font-size: 24px;          /* عنوان أصغر جدًا */
+    margin: 25px 0 35px;
+    margin-bottom: -70px;
+  }
+  .category-section:nth-of-type(2),
+.category-section:nth-of-type(3),
+.category-section:nth-of-type(4),
+.category-section:nth-of-type(5) {
+  margin-top: -155px;
+}
+
+  .category-header h2 {
+    font-size: 16px;          /* عنوان القسم أصغر */
+  }
+
+  .mini-card {
+    min-width: 120px;         /* أصغر الكروت */
+  
+  }
+
+  .image-wrapper {
+    height: 120px;            /* أصغر الصور */
+ 
+}
+
+  .product-btn {
+    padding: 3px 6px;         /* زر داخل الصورة أصغر جدًا */
+    font-size: 9px;
+  }
+
+  .go-products-btn {
+    padding: 6px 13px;        /* زر صفحة المنتجات أصغر جدًا */
+    font-size: 12px;
+  }
+
+  .arrows button {
+    width: 26px;
+    height: 26px;
+    font-size: 14px;
+  }
+
+  .category-section::after {
+    width: 65%;               /* الخط تحت السكشن أصغر */
+    bottom: 45px;
+  }
+
+  .mini-card p {
+    font-size: 11px;          /* نص المنتج أصغر جدًا */
+  }
+
+  .mini-card span {
+    font-size: 9px;           /* نص التقييم أصغر جدًا */
+  }
+}
+
+
+/* تصغير عنوان صفحة المنتجات عند 480px */
+@media screen and (max-width: 480px) {
+  .products-page-title {
+    font-size: 18px;          /* أصغر عنوان للهواتف الصغيرة جدًا */
+    margin: 20px 0 25px;
+    margin-bottom: -70px;
+  }
+}
+
+
+
+/* تصغير كل شيء عند 450px ما عدا عنوان الصفحة */
+@media screen and (max-width: 450px) {
+
+
+
+    .go-products-btn .full-text {
+    display: none;
+  }
+  .go-products-btn .short-text {
+    display: inline;
+  }
+  /* أقسام المنتجات */
+  .category-section {
+    margin: 90px 0;
+  }
+   .products-page-title {
+  
+    margin-bottom: -40px;
+  }
+  .category-section:nth-of-type(2),
+  .category-section:nth-of-type(3),
+  .category-section:nth-of-type(4),
+  .category-section:nth-of-type(5) {
+    margin-top: -110px;
+  }
+  .category-section::after {
+    width: 40vw;              /* الخط تحت السكشن أصغر */
+    bottom: 45px;
+  }
+
+  /* عنوان القسم */
+  .category-header h2 {
+    font-size: 16px;          /* أصغر عنوان القسم */
+   
+
+}
+
+  /* الكروت */
+  .mini-card {
+    min-width: 120px;         /* أصغر الكروت */
+   
+  }
+  .image-wrapper {
+    height: 120px;            /* أصغر الصور */
+  }
+
+  /* زر داخل الصورة */
+  .product-btn {
+    padding: 3px 6px;         /* أصغر زر داخل الصورة */
+    font-size: 9px;
+  }
+
+  /* الأسهم */
+  .arrows button {
+    width: 24px;
+    height: 24px;
+    font-size: 12px;
+    
+  }
+
+  /* نصوص الكارد */
+  .mini-card p {
+    font-size: 10px;          /* نص أصغر للمنتج */
+  }
+  .mini-card span {
+    font-size: 8px;           /* نص أصغر للتقييم */
+  }
+
+  /* زر View Products */
+  .go-products-btn {
+    padding: 5px 10px;        /* أصغر زر صفحة المنتجات */
+    font-size: 10px;
+  }
+  .category-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px; /* قللنا المسافة تحت الهيدر */
+}
+
+/* حاوية الأزرار */
+.header-buttons {
+  display: flex;
+  align-items: center;
+  gap: 4px; /* قللنا المسافة بين زر View Products والأسهم */
+}
+
+/* الأسهم */
+.arrows {
+  display: flex;
+  gap: 4px; /* قللنا المسافة بين الأسهم نفسها */
+}
+
+/* حجم الأسهم + التنقل */
+.arrows button {
+  padding: 0;
+  margin: 0;
+}
+}
+
+@media  (max-width: 390px){
+  /* عنوان القسم */
+  .category-header h2 {
+   max-width: 100px;          /* أصغر عنوان القسم */
+   
+
+}
+
+}
+
+

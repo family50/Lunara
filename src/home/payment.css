@@ -1,0 +1,756 @@
+/* الحاوية الرئيسية تشغل 90% */
+.payment-main-container {
+    position: relative;
+    z-index: 20;
+    width: 90%;
+    margin: 40px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+}
+
+.luxury-glass-vault {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 50px;
+    width: 100%;
+   padding: clamp(20px, 4vw, 60px); /* مسافات مرنة تتقلص مع الشاشة */
+    box-shadow: 0 50px 100px rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+overflow: hidden; /* يمنع خروج أي عنصر */
+ 
+ 
+}
+
+.vault-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.vault-tagline {
+    color: #d4af37;
+    letter-spacing: 5px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    margin-top: 10px;
+    opacity: 0.7;
+   
+}
+
+/* المحرك الرئيسي (Flexbox) */
+.flex-engine {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 60px;
+}
+
+.info-wing, .payment-wing {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0; /* سر التنسيق الهندسي: يسمح للعنصر بالتقلص دون حدود */
+}
+
+/* العناوين الهندسية */
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 35px;
+}
+
+.step-num {
+    font-family: 'Cinzel', serif;
+    color: #d4af37;
+    border: 1px solid #d4af37;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 0.8rem;
+}
+
+.section-title h3 {
+    margin: 0;
+    border: none;
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+}
+
+/* الحاوية التي وضعت لها خلفية حمراء */
+.input-cluster {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(10px, 1.5vw, 20px);
+    
+    box-sizing: border-box;
+    width: 100%;
+    overflow: hidden; /* يمنع أي تسريب بصري للخارج */
+    padding: 10px; /* مسافة أمان صغيرة */
+}
+
+/* الصف الذي يحتوي على 2 إنبوت */
+.flex-row {
+    display: flex;
+    gap: clamp(10px, 2vw, 20px); /* يجعل الفراغ يتقلص مع صغر الشاشة */
+    width: 100%;
+    box-sizing: border-box;
+    flex-wrap: wrap; /* سر الحل: يسمح للإنبوت بالنزول لسطر جديد بدل الخروج من البوكس */
+}
+
+.flex-row .gold-input {
+    /* flex-grow: 1, flex-shrink: 1, flex-basis: calc(50% - gap) */
+    flex: 1 1 150px; /* يسمح بالتقلص والنمو، وأقل عرض قبل النزول لسطر جديد هو 150px */
+    min-width: 0; /* يكسر الحد الأدنى الافتراضي للمحتوى ويسمح بالتقلص الكامل */
+}
+
+.gold-input {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid #d4af37;
+    padding: clamp(12px, 1.5vw, 18px);
+    border-radius: 15px;
+    color: #000000; /* يفضل الأبيض للفخامة، لكن يمكنك تركه 000000 كما تحب */
+    font-size: clamp(0.8rem, 1vw, 0.95rem);
+    transition: 0.4s;
+    box-sizing: border-box;
+    width: 100%; /* يضمن ملء المساحة المتاحة له فقط */
+    display: block;
+}
+
+
+
+
+.gold-input:focus {
+    outline: none;
+    background: rgba(212, 175, 55, 0.05);
+    border-color: #f9f295;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.1);
+}
+
+/* الفاصل الرأسي */
+.geometric-divider {
+    width: 1px;
+    height: 450px;
+    background: linear-gradient(to bottom, transparent, rgba(212, 175, 55, 0.4), transparent);
+    align-self: center;
+    flex-shrink: 0; /* لا يتقلص عرضه */
+}
+
+/* منطقة الكارت */
+.card-display-area {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 30px;
+    padding: 30px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    border: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+.master-card-img {
+    width: 100%;
+    max-width: 320px;
+    filter: drop-shadow(0 20px 40px rgba(0,0,0,0.6));
+    object-fit: contain; /* يضمن عدم تشوه الصورة */
+}
+
+/* الملخص والزر */
+.grand-summary {
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.summary-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    color: #d4af37;
+    font-size: 1.1rem;
+}
+
+.gold-price-tag {
+    font-size: 2rem;
+    font-family: 'Cinzel', serif;
+    color: #d4af37;
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+}
+
+.luxury-submit-btn {
+    width: 100%;
+    padding: 22px;
+    border-radius: 100px;
+    border: none;
+    background: var(--gold);
+    color: #000;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.luxury-submit-btn:hover {
+    transform: scale(1.02);
+    box-shadow: 0 20px 40px rgba(179, 135, 40, 0.4);
+}
+
+/* التعديلات عند الوصول لـ 1120 بكسل */
+@media (max-width: 1120px) {
+    
+    /* 1. تقليل مساحة الحاوية الكبيرة */
+    .luxury-glass-vault {
+        padding: 30px 40px;
+        border-radius: 35px;
+    }
+
+    /* 2. تقليل الفجوة بين القسمين */
+    .flex-engine {
+        gap: 30px;
+    }
+
+    /* 3. تصغير النصوص الرئيسية */
+    .section-title h3 {
+        font-size: 1.1rem;
+        letter-spacing: 1px;
+    }
+
+    .gold-gradient-text {
+        font-size: 2.2rem; /* افترضت وجود هذا الكلاس لعنوان الصفحة */
+    }
+
+    /* 4. تصغير المدخلات لتبدو أكثر تناسقاً */
+    .gold-input {
+        padding: 14px 18px;
+        font-size: 0.85rem;
+        border-radius: 10px;
+    }
+
+    /* 5. تصغير منطقة عرض الكارت والصورة */
+    .card-display-area {
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+
+    .master-card-img {
+        max-width: 260px; /* تصغير حجم الكارت */
+    }
+
+    /* 6. تقصير الفاصل الهندسي */
+    .geometric-divider {
+        height: 350px;
+    }
+
+    /* 7. تصغير منطقة السعر والزر */
+    .gold-price-tag {
+        font-size: 1.6rem;
+    }
+
+    .luxury-submit-btn {
+        padding: 16px;
+        font-size: 0.8rem;
+    }
+
+    .step-num {
+        width: 30px;
+        height: 30px;
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 992px) {
+    /* 1. جعل المحرك الرئيسي عمودياً */
+    .flex-engine {
+        flex-direction: column;
+        align-items: stretch; /* يضمن أن كل قسم يأخذ العرض الكامل */
+        gap: 40px; /* مسافة بين قسم الشحن وقسم الدفع */
+    }
+
+    /* 2. إخفاء الفاصل الهندسي الرأسي */
+    .geometric-divider {
+        display: none;
+    }
+
+    /* 3. التأكد من أن الأجنحة (Wings) تأخذ كامل العرض */
+    .info-wing, .payment-wing {
+        width: 100%;
+        flex: none; /* إلغاء التوزيع المتساوي الأفقي */
+    }
+
+    /* 4. تحسين شكل الحاوية الزجاجية في الشاشات الأصغر */
+    .luxury-glass-vault {
+        padding: 40px 25px; /* تقليل الحواف لزيادة مساحة الكتابة */
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    /* 5. جعل صورة الكارت تتوسط الشاشة وتأخذ حجماً مناسباً */
+    .card-display-area {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .master-card-img {
+        max-width: 300px; /* حجم مثالي للتابلت */
+        height: auto;
+    }
+
+    /* 6. تعديل الـ flex-row لينهار (Wrap) بشكل أفضل */
+    .flex-row {
+        flex-direction: row; /* يظل بجانب بعضه حتى يضيق المكان جداً */
+        flex-wrap: wrap;
+    }
+
+
+
+    /* 7. ضبط رأس الصفحة */
+    .vault-header h1 {
+        font-size: 1.8rem;
+    }
+}
+
+
+
+
+/* التعديلات النهائية للموبايل عند 550 بكسل */
+@media (max-width: 550px) {
+    
+    /* 1. تقليل الحواف الخارجية والداخلية للبوكس الرئيسي */
+    .payment-main-container {
+        width: 95%; /* زيادة العرض قليلاً لتوفير مساحة */
+        margin: 20px auto;
+    }
+
+    .luxury-glass-vault {
+        padding: 25px 15px; /* تقليل الحشو الداخلي لأقصى درجة */
+        border-radius: 25px;
+    }
+
+    /* 2. تصغير العناوين والخطوط */
+    .vault-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .vault-tagline {
+        letter-spacing: 2px;
+        font-size: 0.6rem;
+    }
+
+    .section-title h3 {
+        font-size: 1rem;
+    }
+
+    .step-num {
+        width: 25px;
+        height: 25px;
+        font-size: 0.6rem;
+    }
+
+
+
+    /* 2. سر الحفاظ على الترتيب الأفقي */
+    .flex-row {
+        display: flex;
+        flex-direction: row !important; /* إجبار الترتيب الأفقي */
+        flex-wrap: nowrap !important;   /* منع النزول لسطر جديد */
+        gap: 8px; /* تقليل المسافة بين الإنبوتات لأقل حد */
+        width: 100%;
+    }
+
+
+
+ 
+    .flex-row .gold-input {
+        flex: 1; /* تقسيم المساحة بالتساوي */
+        min-width: 0; /* السماح للإنبوت بالتقلص لأي حجم دون مقاومة */
+        padding: 10px 8px; /* تقليل الحشو الداخلي جداً لترك مساحة للنص */
+        font-size: 0.75rem; /* تصغير الخط ليناسب المساحة الضيقة */
+    }
+
+
+
+    
+
+    .gold-input {
+        padding: 12px 15px;
+        font-size: 0.8rem;
+    }
+
+    /* 4. تصغير منطقة الكارت الذهبي لتناسب عرض الموبايل */
+    .card-display-area {
+        padding: 15px;
+        border-radius: 15px;
+    }
+
+    .master-card-img {
+        max-width: 220px; /* حجم صغير ومناسب جداً لشاشة الموبايل */
+    }
+
+    /* 5. ضبط منطقة السعر والزر */
+    .summary-line {
+        font-size: 0.9rem;
+    }
+
+    .gold-price-tag {
+        font-size: 1.4rem;
+    }
+
+    .luxury-submit-btn {
+        padding: 18px;
+        font-size: 0.75rem;
+        letter-spacing: 1.5px;
+    }
+
+    /* 6. تقليل المسافات بين الأقسام */
+    .flex-engine {
+        gap: 30px;
+    }
+    
+   .section-title {
+        gap: 8px;
+        margin-bottom: 15px;
+    }
+
+    .step-num {
+        width: 20px;
+        height: 20px;
+        font-size: 0.55rem;
+    }
+
+    .section-title h3 {
+        font-size: 0.9rem;
+    }
+
+    /* 4. تصغير صورة الكارت الذهبي لكي لا تضغط على البوكس */
+    .master-card-img {
+        max-width: 180px; 
+    }
+
+    .card-display-area {
+        padding: 10px;
+    }
+
+    /* 5. جعل المدخلات الطويلة (التي ليست في row) تأخذ العرض المتاح */
+    .input-cluster > .gold-input {
+        width: 100%;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* تصميم الحالة الفارغة */
+.empty-vault-state {
+    width: 90%;
+    height: 90%;
+    background: rgba(255, 255, 255, 0.02);
+ 
+    border: 1px solid rgba(212, 175, 55, 0.15);
+    border-radius: 40px;
+    padding: 60px 40px;
+    text-align: center;
+    box-shadow: 0 40px 100px rgba(0,0,0,0.4);
+    animation: fadeInScale 0.8s ease-out;
+   
+}
+
+.ethereal-text {
+    font-family: 'Cinzel', serif;
+    color: #d4af37;
+    font-size: 2.2rem;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+    text-shadow: 0 0 20px rgba(255,255,255,0.2);
+}
+
+.gold-sub-text {
+    color: #d4af37;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 40px;
+    opacity: 0.8;
+}
+
+/* حركة الكارت في الحالة الفارغة */
+.empty-card-visual {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.floating-empty-card {
+    width: 100%;
+    max-width: 280px;
+    filter: grayscale(0.5) contrast(1.1) drop-shadow(0 20px 50px rgba(0,0,0,0.5));
+    animation: luxuriousFloat 5s ease-in-out infinite;
+}
+
+
+
+.card-shadow-pulse {
+    position: absolute;
+    bottom: -20px;
+    width: 150px;
+    height: 10px;
+    background: rgba(212, 175, 55, 0.2);
+    filter: blur(15px);
+    border-radius: 50%;
+    animation: shadowScale 5s ease-in-out infinite;
+}
+
+
+/* زر العودة للمتجر */
+.return-shrine-btn {
+    background: transparent;
+    border: 1px solid #d4af37;
+    color: #d4af37;
+    padding: 15px 40px;
+    border-radius: 50px;
+    font-family: 'Inter', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.5s all;
+}
+
+.return-shrine-btn:hover {
+    background: #d4af37;
+    color: #000;
+    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+    transform: translateY(-3px);
+}
+
+/* التنسيق الخاص بالموبايل الصغير جداً */
+@media (max-width: 450px) {
+    
+    /* 1. تصغير الحاوية الكبيرة لتناسب الشاشة */
+    .empty-vault-state {
+        width: 95%;
+        height: auto; /* ترك الارتفاع يتحدد بالمحتوى لمنع الضغط */
+        padding: 40px 20px;
+        border-radius: 25px;
+    }
+
+    /* 2. تصغير الخطوط والعناوين */
+    .ethereal-text {
+        font-size: 1.4rem; /* تصغير العنوان ليكون على سطر واحد أو سطرين بشكل متناسق */
+        letter-spacing: 1.5px;
+        margin-bottom: 8px;
+    }
+
+    .gold-sub-text {
+        font-size: 0.7rem;
+        letter-spacing: 2px;
+        margin-bottom: 30px;
+    }
+
+    /* 3. تصغير حجم الكارت العائم */
+    .floating-empty-card {
+        max-width: 180px; /* حجم مثالي لعرض الموبايل */
+    }
+
+    .empty-card-visual {
+        margin-bottom: 35px;
+    }
+
+    /* 4. ضبط حجم الظل تحت الكارت */
+    .card-shadow-pulse {
+        width: 100px;
+        bottom: -15px;
+    }
+
+    /* 5. جعل الزر أكثر رشاقة */
+    .return-shrine-btn {
+        padding: 12px 25px;
+        font-size: 0.75rem;
+        letter-spacing: 1px;
+        width: 100%; /* جعل الزر بعرض الحاوية ليسهل الضغط عليه بالإبهام */
+        max-width: 200px; /* سقف العرض لعدم التمدد الزائد */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* تنسيق الخطأ في الإدخال */
+.input-error {
+    border-color: #ff4d4d !important;
+    box-shadow: 0 0 10px rgba(255, 77, 77, 0.2) !important;
+}
+
+/* طبقة الإيصال الشفافة */
+.receipt-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(15px);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* جسم الإيصال الفاخر */
+.luxury-receipt {
+    background: linear-gradient(135deg, rgba(20, 20, 20, 0.95), rgba(40, 40, 40, 0.95));
+    border: 2px solid #d4af37;
+    width: 100%;
+    max-width: 450px;
+    border-radius: 30px;
+    padding: 40px;
+    position: relative;
+    box-shadow: 0 0 50px rgba(212, 175, 55, 0.2);
+}
+
+.close-receipt-btn {
+    position: absolute;
+    top: 20px; left: 20px;
+    background: none; border: none;
+    color: #d4af37; font-size: 1.5rem;
+    cursor: pointer; transition: 0.3s;
+}
+
+.close-receipt-btn:hover { transform: rotate(90deg); opacity: 0.7; }
+
+.success-icon {
+    width: 60px; height: 60px;
+    border: 2px solid #d4af37;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 20px;
+    color: #d4af37; font-size: 1.8rem;
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+}
+
+.receipt-header { text-align: center; margin-bottom: 30px; }
+.receipt-header p { color: #888; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; }
+
+.receipt-divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(212, 175, 55, 0.4), transparent);
+    margin: 20px 0;
+}
+
+.receipt-item-row {
+    display: flex; justify-content: space-between;
+    margin-bottom: 12px;
+    color: #ccc; font-size: 0.95rem;
+}
+
+.receipt-total {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.total-gold-text {
+    font-size: 1.8rem;
+    color: #d4af37;
+    font-family: 'Cinzel', serif;
+}
+
+.receipt-footer {
+    text-align: center; margin-top: 30px;
+    font-size: 0.75rem; color: #666;
+    line-height: 1.6;
+}
+
+
+
+/* التنسيق الخاص بالشاشات فائقة الصغر (أقل من 400 بكسل) */
+@media (max-width: 400px) {
+    
+    /* 1. تصغير المسافات الداخلية للجسم الرئيسي */
+    .luxury-receipt {
+        padding: 30px 20px; /* تقليل الحشو لزيادة مساحة المحتوى */
+        border-radius: 20px; /* تنعيم الحواف لتناسب الحجم الصغر */
+    }
+
+    /* 2. تصغير أيقونة النجاح والزخارف */
+    .success-icon {
+        width: 45px; /* تصغير القطر */
+        height: 45px;
+        font-size: 1.3rem; /* تصغير حجم علامة الصح */
+        margin-bottom: 15px;
+    }
+
+    /* 3. العناوين والنصوص */
+    .receipt-header h2 {
+        font-size: 1.3rem; /* تصغير عنوان "Confirmation" */
+        letter-spacing: 1px;
+    }
+
+    .receipt-header p {
+        font-size: 0.65rem; /* تصغير النص الفرعي */
+        letter-spacing: 1px;
+    }
+
+    /* 4. قائمة العناصر (Receipt Items) */
+    .receipt-item-row {
+        font-size: 0.8rem; /* تصغير أسماء المنتجات */
+        margin-bottom: 8px;
+    }
+
+    /* 5. قسم الإجمالي */
+    .total-gold-text {
+        font-size: 1.4rem; /* تصغير الرقم الذهبي النهائي */
+    }
+
+    .receipt-total span:first-child {
+        font-size: 0.8rem; /* تصغير نص "Grand Total" */
+    }
+
+    /* 6. زر الإغلاق */
+    .close-receipt-btn {
+        top: 15px;
+        left: 15px;
+        font-size: 1.2rem;
+    }
+
+    /* 7. تذييل الإيصال */
+    .receipt-footer {
+        margin-top: 20px;
+        font-size: 0.65rem;
+    }
+}

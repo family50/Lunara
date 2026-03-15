@@ -1,0 +1,432 @@
+/*-------------------------*/
+/*     HEADER — ثابت       */
+/*-------------------------*/
+
+
+.header {
+  width: 100%;
+  padding: 15px 36px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* خلفية بيضاء شفافة بلمسة ذهبية خفيفة جداً */
+  background: rgba(255, 255, 255, 0.7); 
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  /* ظل ذهبي خافت جداً ليعطي عمق فخم */
+  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.12);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+/*-------------------------*/
+/* LEFT — LOGO        */
+/*-------------------------*/
+.header-left {
+  font-size: 35px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  cursor: pointer;
+  color: #D4AF37; /* الذهب الملكي */
+  transition: 0.3s ease-in-out;
+  transform-origin: left center;
+  /* إضافة لمعان خفيف للنص */
+  text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.05);
+}
+
+.header-left:hover {
+  transform: scale(1.05);
+  color: #B8860B; /* ذهبي أغمق عند المرور */
+}
+
+/*-------------------------*/
+/* CENTER — LINKS      */
+/*-------------------------*/
+.header-center {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.header-center .nav-item {
+  text-decoration: none;
+  color: #D4AF37; /* النص باللون الذهبي */
+  font-weight: 600;
+  font-size: 17px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 16px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  position: relative;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+/* خط الأنيميشن تحت الروابط */
+.header-center .nav-item::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0%;
+  height: 2px;
+  background: #D4AF37; /* خط ذهبي */
+  border-radius: 10px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateX(-50%);
+}
+
+.header-center .nav-item:hover::after,
+.header-center .nav-item.active::after {
+  width: 70%; /* يتمدد بنسبة 70% لمنظر أكثر رقياً */
+}
+
+.header-center .nav-item:hover,
+.header-center .nav-item.active {
+  color: #B8860B; /* تغيير الدرجة للذهبي الغامق */
+  background: rgba(212, 175, 55, 0.08); /* خلفية ذهبية باهتة جداً */
+}
+
+/*-------------------------*/
+/* RIGHT — BUTTON     */
+/*-------------------------*/
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+}
+
+.RENDERFEEL-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 22px;
+  /* إطار ذهبي صريح */
+  border: 1.5px solid #D4AF37; 
+  background: rgba(255, 255, 255, 0.5);
+  color: #D4AF37;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 14px;
+  transition: all 0.3s ease;
+  font-weight: 700;
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.RENDERFEEL-btn:hover {
+  background: #D4AF37; /* ينقلب الزر لذهبي كامل */
+  color: #ffffff; /* النص يصبح أبيض */
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+  transform: translateY(-2px);
+}
+
+.circle {
+  width: 14px;
+  height: 14px;
+  background-color: #D4AF37;
+  border-radius: 50%;
+  /* تألق خفيف للدائرة */
+  box-shadow: 0 0 8px rgba(212, 175, 55, 0.5);
+  flex-shrink: 0;
+  transition: background 0.3s ease;
+}
+
+.RENDERFEEL-btn:hover .circle {
+  background-color: #ffffff; /* الدائرة تقلب أبيض عند الهوفر */
+  box-shadow: none;
+}
+
+.arrow-icon {
+  font-size: 12px;
+  color: #D4AF37;
+  transition: 0.3s ease;
+}
+
+.RENDERFEEL-btn:hover .arrow-icon {
+  color: #ffffff;
+  transform: translateX(3px);
+}
+
+/*-------------------------*/
+/* DROPDOWN OPTIONS     */
+/*-------------------------*/
+.dropdown-options {   
+  position: absolute;   
+  top: calc(100% + 10px);   
+  right: 0;   
+  min-width: 210px;   
+  background: #ffffff; /* خلفية بيضاء نقية */   
+  border-radius: 16px;   
+  border: 1px solid rgba(212, 175, 55, 0.3); /* إطار ذهبي نحيف */   
+  padding: 12px;   
+  display: flex;   
+  flex-direction: column;   
+  gap: 4px;   
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  opacity: 0;   
+  transform: translateY(-10px);   
+  pointer-events: none;   
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);   
+  z-index: 1000;   
+}
+
+.dropdown-options.show {   
+  opacity: 1;   
+  transform: translateY(0);   
+  pointer-events: auto;   
+} 
+
+.dropdown-item { 
+  display: flex; 
+  align-items: center; 
+  padding: 10px 14px; 
+  cursor: pointer; 
+  border-radius: 10px; 
+  transition: 0.2s ease; 
+  color: #444; /* نص غامق للقراءة */ 
+  font-weight: 500; 
+} 
+
+.dropdown-item:hover { 
+  background: rgba(212, 175, 55, 0.1); /* هوفر ذهبي خفيف */ 
+  color: #D4AF37; /* النص يقلب ذهبي */
+  transform: translateX(5px); 
+}
+
+.arrow-icon.rotate { 
+  transform: rotate(180deg); 
+}
+
+
+
+/*==============================*/
+/*  RESPONSIVE — عند 1200px     */
+/*==============================*/
+@media (max-width: 1200px) {
+    .header {
+ 
+  padding: 16px 38px; /* مسافات داخلية من كل الاتجاهات */
+}
+
+  /* تصغير اللوجو بشكل بسيط */
+  .header-left {
+    font-size: 30px;
+  }
+
+  /* الروابط — حجم أصغر شوية */
+  .header-center .nav-item  {
+    font-size: 15px;
+    gap: 8px; /* تقليل المسافة بين الأيقونة والنص */
+    padding: 5px 10px; /* تصغير بسيط */
+  }
+
+  /* تقليل المسافات بين الروابط */
+  .header-center {
+    gap: 22px; /* بدل 30px */
+  }
+
+  /* الزر — تصغير بسيط */
+  .RENDERFEEL-btn {
+    padding: 8px 16px;
+    font-size: 15px;
+    gap: 8px;
+  }
+
+  /* الدائرة نفسها تصغر شوية */
+  .circle {
+    width: 18px;
+    height: 18px;
+  }
+
+  /* السهم يصغر حاجة بسيطة */
+  .arrow-icon {
+    font-size: 13px;
+  }
+}
+/*==============================*/
+/*  RESPONSIVE — عند 1040px     */
+/*==============================*/
+@media (max-width: 1040px) {
+
+  /* الهيدر نفسه يبقى أنعم */
+  .header {
+    padding: 14px 30px;
+  }
+
+  /* اللوجو أصغر */
+  .header-left {
+    font-size: 26px;
+  }
+
+  /* الروابط */
+  .header-center .nav-item  {
+    font-size: 14px;
+    gap: 6px; 
+    padding: 4px 8px;
+  }
+
+  /* المسافة بين الروابط */
+  .header-center {
+    gap: 18px;
+  }
+
+  /* زر الفيس ووش */
+  .RENDERFEEL-btn {
+    padding: 7px 14px;
+    font-size: 14px;
+    gap: 6px;
+  }
+
+  /* تصغير الدائرة */
+  .circle {
+    width: 16px;
+    height: 16px;
+  }
+
+  /* السهم */
+  .arrow-icon {
+    font-size: 12px;
+  }
+}
+/*==============================*/
+/*  RESPONSIVE — عند 870px     */
+/*==============================*/
+
+@media (max-width: 870px) {
+
+
+  /* الجزء الأوسط (الروابط) ينزل أسفل الشاشة */
+  .header-center {
+    background: rgba(255, 255, 255, 0.85); 
+    backdrop-filter: blur(15px); /* تأثير زجاجي قوي وناعم */
+    -webkit-backdrop-filter: blur(15px);
+    position: fixed;        /* ثابت أسفل الشاشة */
+    bottom: -90vh;            /* 2% من ارتفاع الشاشة من الأسفل */          /* مسافة بسيطة من الأسفل */
+    left: 50%;              /* لعمل مركزية */
+    transform: translateX(-50%); /* توسيط كامل */
+    width: 90%;             /* يأخذ 90% من عرض الشاشة */
+    border: 1px solid rgba(212, 175, 55, 0.3);
+  
+    padding: 10px 15px;     /* مساحة داخلية للروابط */
+    border-radius: 12px;    /* حواف ناعمة من كل الجهات */
+    display: flex;           /* ترتيب الروابط جنب بعض */
+    justify-content: space-around; /* توزيع متساوي للروابط */
+    z-index: 999;           /* فوق باقي العناصر لكن تحت الهيدر */
+    gap: 12px;               /* مسافة بين الروابط */
+    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.15);
+  }
+
+  /* الروابط نفسها تصغر شوية وتبقى مناسبة */
+  .header-center .nav-item  {
+    font-size: 14px;
+    padding: 5px 8px;
+    border-radius: 8px; /* حواف ناعمة داخل البلوك */
+  } 
+}
+
+/*==============================*/
+/*  RESPONSIVE — عند 480px      */
+/*==============================*/
+@media (max-width: 480px) {
+/* الهيدر نفسه يبقى أنعم */
+  .header {
+    padding: 12px 25px;
+  }
+  /* تصغير اللوجو */
+  .header-left {
+    font-size: 22px;
+  }
+
+  /* تصغير زرار اليمين */
+  .RENDERFEEL-btn {
+    padding: 6px 12px;
+    font-size: 13px;
+    gap: 5px;
+  }
+
+  .circle {
+    width: 14px;
+    height: 14px;
+  }
+
+  .arrow-icon {
+    font-size: 11px;
+  }
+
+  /* الروابط في الجزء الأوسط */
+  .header-center {
+    width: 95%;             /* تقليل العرض قليلًا ليناسب الشاشات الصغيرة */
+    padding: 8px 10px;      /* تقليل الحشو الداخلي */
+    gap: 8px;               /* تقليل المسافة بين الروابط */
+     bottom: -91vh; 
+    border-radius: 10px;    /* حواف ناعمة مناسبة */
+  }
+
+  .header-center .nav-item  {
+    font-size: 12px;        /* تصغير حجم النص */
+    padding: 4px 6px;       /* تقليل الحشو */
+    border-radius: 6px;     /* حواف أصغر داخل البلوك */
+  }
+
+  
+}
+/*==============================*/
+/*  RESPONSIVE — عند 400px      */
+/*==============================*/
+@media (max-width: 400px) {
+
+  /* الهيدر نفسه أنعم */
+  .header {
+    padding: 10px 20px;
+  }
+
+  /* تصغير اللوجو */
+  .header-left {
+    font-size: 20px;
+  }
+
+  /* تصغير زرار اليمين */
+  .RENDERFEEL-btn {
+    padding: 5px 10px;
+    font-size: 12px;
+    gap: 4px;
+  }
+
+  .circle {
+    width: 12px;
+    height: 12px;
+  }
+
+  .arrow-icon {
+    font-size: 10px;
+  }
+
+  /* الروابط في الجزء الأوسط */
+  .header-center {
+    width: 95%;           /* تقريبًا نفس العرض */
+    padding: 6px 8px;     /* تقليل الحشو أكثر */
+    gap: 6px;             /* تقليل المسافة بين الروابط */
+          bottom: -92vh; 
+    border-radius: 8px;   /* حواف أنعم */
+  }
+
+  .header-center .nav-item  {
+    font-size: 11px;      /* نص أصغر */
+    padding: 3px 5px;     /* تقليل الحشو */
+    border-radius: 5px;   /* حواف أصغر */
+  }
+
+  /* الهيدر الأيمن والأيسر يظلوا ثابتين */
+  .header-left, .header-right {
+    flex: 0 0 auto;
+  }
+}
+

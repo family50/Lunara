@@ -1,0 +1,397 @@
+.page-2{
+  width: 100%;
+  height: 820px; /* ارتفاع الشاشة كله */
+  position: relative;
+ 
+
+}
+.f2-canvas {
+  width: 100%;
+  height: 100%;
+  display: block; /* يمنع أي مسافات حوالين الكانفس */
+  position: absolute;
+  z-index: 2;
+ 
+}
+
+
+.discount-badge span {
+  font-size: 30px; /* حجم خط OFF أصغر */
+}
+
+/* ====== منطقة المعلومات (يمين) ====== */
+.info-area {
+ display: flex;
+ flex-direction: column;
+ position: absolute; /* ثابت على الكانفس */
+ top: 150px; /* مسافة من الأعلى */
+  right: 15%; /* مسافة من الشمال */
+  display: flex; /* ترتيب النصوص والصور */
+  gap: 10px; /* مسافة بين النصوص والصور */
+
+}
+
+/* كل بوكس زجاجي */
+.glass-box {
+  /* خلفية بيضاء شفافة بلمسة ذهبية خافتة جداً */
+  background: rgba(255, 255, 255, 0.45); 
+  backdrop-filter: blur(12px); /* زيادة التضبيب لمنظر أكثر نعومة */
+  -webkit-backdrop-filter: blur(12px);
+  
+  /* إطار ذهبي رقيق جداً يعطي تحديداً فخماً */
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  border-radius: 18px; /* حواف أكثر استدارة ورقي */
+  
+  padding: 20px 25px;
+  width: 600px;
+  height: 120px;
+  display: flex;
+  align-items: center; /* توسيط المحتويات عمودياً */
+  
+  /* ظل ذهبي خفيف بدلاً من الأسود */
+  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.08); 
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  cursor: pointer;
+}
+
+/* تأثير hover على البوكس */
+.glass-box:hover {
+  transform: translateY(-8px) scale(1.02); /* رفع وتكبير بسيط جداً */
+  background: rgba(255, 255, 255, 0.65); /* زيادة الوضوح عند الوقوف عليه */
+  box-shadow: 0 15px 35px rgba(212, 175, 55, 0.15); /* توهج ذهبي أوضح */
+  border: 1px solid rgba(212, 175, 55, 0.5); /* الإطار يصبح أوضح */
+}
+
+/* الأيقونات داخل البوكس */
+.glass-box .icon {
+  font-size: 42px; /* حجم متوازن */
+  color: #D4AF37; /* الذهب الملكي */
+  flex-shrink: 0;
+  margin-right: 25px;
+  /* إضافة توهج خفيف للأيقونة */
+  filter: drop-shadow(0 0 5px rgba(212, 175, 55, 0.2));
+  transition: transform 0.3s ease;
+}
+
+.glass-box:hover .icon {
+  transform: rotate(-5deg) scale(1.1); /* حركة بسيطة للأيقونة عند الـ hover */
+}
+
+/* النصوص داخل البوكس */
+.glass-box .text-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* العنوان الرئيسي داخل البوكس */
+.glass-box h3 {
+  font-size: 20px;
+  color: #D4AF37; /* اللون الذهبي */
+  margin: 0 0 4px 0;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: capitalize;
+}
+
+/* الوصف الفرعي داخل البوكس */
+.glass-box p {
+  font-size: 15px;
+  color: #777; /* رمادي دافئ ليجعل العنوان الذهبي هو البارز */
+  margin: 0;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+
+.f2-canvas{
+  position: relative;
+  right: 0;
+  height: 700px;
+  top: 50px;
+ width: 100%;
+
+
+}
+@media (max-width: 1225px){
+  /* خصم 50% */
+  .discount-badge {
+    width: 130px;       /* صغر العرض */
+    height: 130px;      /* صغر الارتفاع */
+    font-size: 60px;   /* صغر حجم الرقم */
+   
+  }
+
+  .discount-badge span {
+    font-size: 30px;   /* صغر OFF */
+  }
+
+  /* منطقة المعلومات */
+  .info-area {
+    
+    gap: 8px;         /* تقليل المسافة بين البوكسات */
+  }
+
+  /* البوكسات الزجاجية */
+  .glass-box {
+    width: 480px;     /* تصغير العرض */
+    height: 100px;    /* تصغير الارتفاع */
+    padding: 15px;    /* تقليل الحشو */
+  }
+
+  /* الأيقونات */
+  .glass-box .icon {
+    font-size: 36px;  /* تصغير الأيقونة */
+    margin-right: 15px; /* تقليل المسافة للنص */
+  }
+
+  /* النصوص */
+  .glass-box h3 {
+    font-size: 18px;  /* تصغير العنوان */
+  }
+
+  .glass-box p {
+    font-size: 14px;  /* تصغير الوصف */
+  }
+  .page-2{
+  
+  height: 780px; /* ارتفاع الشاشة كله */
+
+ 
+
+}
+  .page-2{
+  
+  height: 690px; /* ارتفاع الشاشة كله */
+
+ 
+
+}
+}
+
+
+
+@media (max-width: 990px){
+ 
+  .discount-badge span {
+    font-size: 18px;   /* صغر OFF */
+  }
+
+  /* منطقة المعلومات */
+  .info-area {
+           /* رفع قليلاً للأعلى */
+    gap: 6px;          /* تقليل المسافة بين البوكسات */
+  }
+
+  /* البوكسات الزجاجية */
+  .glass-box {
+    width: 360px;      /* تصغير العرض */
+    height: 80px;      /* تصغير الارتفاع */
+    padding: 10px;     /* تقليل الحشو */  
+}
+
+
+  /* الأيقونات داخل البوكس */
+  .glass-box .icon {
+    font-size: 28px;   /* تصغير الأيقونة */
+    margin-right: 10px; /* تقليل المسافة للنص */
+  }
+
+  /* العنوان الرئيسي داخل البوكس */
+  .glass-box h3 {
+    font-size: 16px;   /* تصغير العنوان */
+  }
+
+  /* الوصف الفرعي داخل البوكس */
+  .glass-box p {
+    font-size: 12px;   /* تصغير الوصف */
+  }
+  /* خصم 50% */
+.discount-badge {
+  
+  width: 120px; /* عرض الدائرة */
+  height: 120px; /* ارتفاع الدائرة */
+  font-size: 60px; /* حجم الخط */
+}
+
+}
+
+
+
+
+@media (max-width: 870px){
+/* منطقة المعلومات */
+  .info-area {
+
+    gap: 6px;          /* تقليل المسافة بين البوكسات */
+  }
+/* البوكسات الزجاجية */
+  .glass-box {
+    width: 300px;      /* تصغير العرض */
+    height: 80px;      /* تصغير الارتفاع */
+    padding: 10px;     /* تقليل الحشو */  
+}
+  /* خصم 50% */
+.discount-badge {
+
+
+  width: 120px; /* عرض الدائرة */
+  height: 120px; /* ارتفاع الدائرة */
+  font-size: 50px; /* حجم الخط */
+
+
+  font-size: 60px; /* حجم الخط */
+}
+
+
+}
+
+
+@media (max-width: 730px){
+ /* خصم 50% */
+.discount-badge {
+
+  margin-left: 32%;
+  top: 530px;
+  width: 100px; /* عرض الدائرة */
+  height: 100px; /* ارتفاع الدائرة */
+  font-size: 50px; /* حجم الخط */
+}
+  .page-2{
+ 
+  height: 700px; /* ارتفاع الشاشة كله */
+
+}
+}
+@media (max-width: 670px){
+  /* خصم 50% */
+  .discount-badge {
+
+    width: 90px;    /* تقليل عرض الدائرة */
+    height: 90px;   /* تقليل ارتفاع الدائرة */
+    font-size: 45px; /* تقليل حجم الرقم */
+  }
+
+  .discount-badge span {
+    font-size: 18px; /* تصغير OFF */
+  }
+
+  /* منطقة المعلومات */
+  .info-area {
+
+    gap: 5px;       /* تقليل المسافة بين البوكسات */
+  }
+
+  /* البوكسات الزجاجية */
+  .glass-box {
+    width: 260px;   /* تصغير العرض */
+    height: 70px;   /* تصغير الارتفاع */
+    padding: 8px;   /* تقليل الحشو */
+  }
+
+  /* الأيقونات داخل البوكس */
+  .glass-box .icon {
+    font-size: 24px;  /* تصغير الأيقونة */
+    margin-right: 8px; /* تقليل المسافة للنص */
+  }
+
+  /* العنوان الرئيسي داخل البوكس */
+  .glass-box h3 {
+    font-size: 14px;  /* تصغير العنوان */
+  }
+
+  /* الوصف الفرعي داخل البوكس */
+  .glass-box p {
+    font-size: 11px;  /* تصغير الوصف */
+  }
+}
+@media (max-width: 620px){
+     /* منطقة المعلومات */
+  .info-area {
+
+    gap: 5px;       /* تقليل المسافة بين البوكسات */
+  }
+    /* خصم 50% */
+  .discount-badge {
+
+    width: 90px;    /* تقليل عرض الدائرة */
+    height: 90px;   /* تقليل ارتفاع الدائرة */
+    font-size: 45px; /* تقليل حجم الرقم */
+  }
+
+
+}
+@media (max-width: 560px){
+  /* خصم 50% */
+  .discount-badge {
+
+    width: 90px;     /* تصغير الدائرة */
+    height: 90px;    /* تصغير الدائرة */
+    font-size: 40px; /* تصغير الرقم */
+  }
+
+  .discount-badge span {
+    font-size: 16px; /* تصغير OFF */
+  }
+
+  /* منطقة المعلومات */
+  .info-area {
+
+    
+    gap: 4px;        /* تقليل المسافة بين البوكسات */
+  }
+
+  /* البوكسات الزجاجية */
+  .glass-box {
+    width: 220px;    /* تصغير العرض */
+    height: 60px;    /* تصغير الارتفاع */
+    padding: 6px;    /* تقليل الحشو */
+  }
+
+  /* الأيقونات داخل البوكس */
+  .glass-box .icon {
+    font-size: 20px;  /* تصغير الأيقونة */
+    margin-right: 6px; /* تقليل المسافة للنص */
+  }
+
+  /* العنوان الرئيسي داخل البوكس */
+  .glass-box h3 {
+    font-size: 12px;  /* تصغير العنوان */
+  }
+
+  /* الوصف الفرعي داخل البوكس */
+  .glass-box p {
+    font-size: 10px;  /* تصغير الوصف */
+  }
+}
+
+@media (max-width: 470px){
+    .info-area {
+
+    gap: 4px;        /* تقليل المسافة بين البوكسات */
+  }
+   .discount-badge {
+
+    width: 100px;     /* تصغير الدائرة */
+    height: 100px;    /* تصغير الدائرة */
+    font-size: 40px; /* تصغير الرقم */
+  }
+}
+@media (max-width: 425px){
+     .discount-badge {
+       margin-left: 34%;
+       top: 590px;
+       width: 100px;     /* تصغير الدائرة */
+       height: 100px;    /* تصغير الدائرة */
+      font-size: 40px; /* تصغير الرقم */
+  }
+}
+
+
+@media (min-height: 925px){
+ .page-2{
+ 
+  height: 700px; /* ارتفاع الشاشة كله */
+  
+}
+}

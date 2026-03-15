@@ -1,0 +1,1024 @@
+.all-productssss{
+    width: 100vw;
+      min-height: 100vh;
+    overflow-y: auto;
+}
+
+.img-container {
+  position: relative;
+  width: 100%;
+  max-height: 550px;
+  border-radius:0 0 14px 14px;
+}
+
+.hero-image {
+  width: 100%;
+  height: 550px;
+  object-fit: cover;
+   object-position: center; /* يركز القص من النص *//* Shadow داخلي */
+  box-shadow: inset 0 80px 150px rgba(0, 0, 0, 0.7);
+  transition: all 0.5s ease;
+  display: block;
+   border-radius:0 0 14px 14px;
+
+}
+
+.img-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  /* Overlay نصف شفاف أسود */
+  background: rgba(0, 0, 0, 0.5); /* شفاف 50% */
+  pointer-events: none; /* لا يعيق أي تفاعل */
+  z-index: 1;
+ border-radius:0 0 14px 14px;
+}
+
+.hero-text-wrapper {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2; /* فوق Overlay */
+  text-align: center;
+  width: 80%;
+  
+}
+
+
+.hero-text {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 2px;
+  
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
+  width: 90%;
+  
+}
+
+
+@media (max-width: 1024px) {
+  .hero-text {
+    font-size: 30px;
+  }
+}
+@media (max-width: 925px) {
+  .hero-text {
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 586px) {
+  .hero-text {
+    font-size: 18px;
+  }
+}
+
+
+
+.best-seller-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.best-seller-text {
+  font-size: 3.6rem; /* خط كبير */
+  font-weight: bold;
+  font-family: 'Cinzel', serif;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-top: 30px;
+  /* تأثير خفيف */
+  text-shadow: 2px 2px 6px rgba(255, 255, 255, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.best-seller-text:hover {
+  transform: scale(1.05); /* تكبير خفيف عند hover */
+}
+
+.best-seller-content {
+  width: 90%;
+  min-height: 200px; /* مكان افتراضي لمحتوى المنتجات */
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.best-seller-text {
+  position: relative;
+  display: inline-block; /* مهم جداً لكي يكون الخط بطول الكلمة فقط */
+  padding-bottom: 10px;
+  cursor: default;
+}
+
+.best-seller-text::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px; /* طول الخط الابتدائي */
+  height: 3px; /* سمك الخط */
+  background-color: currentColor; /* سيأخذ اللون من الـ style color المرسل من JSX */
+  border-radius: 2px;
+  transition: width 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* أنميشن ارتدادي ناعم */
+}
+
+/* تأثير الـ Hover */
+.best-seller-text:hover::after {
+  width: 100%; /* الخط يتمدد ليملأ الكلمة بالكامل */
+}
+
+.best-seller-text:hover {
+  letter-spacing: 3px; /* تباعد بسيط للحروف عند الهوفر لإعطاء طابع الفخامة */
+}
+
+
+
+
+
+
+
+
+
+/* الحاوية الخارجية التي تخفي ما بداخلها */
+.best-seller-main-wrapper {
+  min-width: 80%; /* العرض الذي يحدد منطقة الظهور */
+   max-width: 80%;
+ max-height: 800px;
+  margin: 40px auto;
+  overflow: hidden; /* إخفاء الأجزاء الخارجة عن النطاق */
+  position: relative;
+ 
+  padding: 20px 0; /* مساحة للتنفس */
+}
+/* الظل من الجهة اليسرى - تدرج بـ 5 مراحل لنعومة فائقة */
+.best-seller-main-wrapper::before {
+  left: 0;
+  background: linear-gradient(
+    to right, 
+    var(--side-color) 0%, 
+    var(--side-color) 20%, 
+    rgba(255, 255, 255, 0) 100%
+  );
+  /* إذا أردت جعل اللون يختفي تماماً بمرونة، استبدل rgba باللون الشفاف */
+  background: linear-gradient(
+    to right, 
+    var(--side-color) 0%, 
+    var(--side-color) 15%, 
+    var(--side-color) 40%, 
+    transparent 100%
+  );
+}
+
+/* الظل من الجهة اليمنى - تدرج بـ 5 مراحل لنعومة فائقة */
+.best-seller-main-wrapper::after {
+  right: 0;
+  background: linear-gradient(
+    to left, 
+    var(--side-color) 0%, 
+    var(--side-color) 15%, 
+    var(--side-color) 40%, 
+    transparent 100%
+  );
+}
+
+/* كود إضافي لجعل التضليل يبدو كأنه ضبابي (Blur) */
+.best-seller-main-wrapper::before,
+.best-seller-main-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 25%; /* عرض التضليل */
+  height: 100%;
+  z-index: 10;
+  pointer-events: none;
+  /* إضافة تأثير ضبابي خفيف على أطراف التضليل */
+  backdrop-filter: blur(1px); 
+}
+.best-seller-content {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px; /* المسافة بين الكروت */
+  min-width: 120%; /* عرض أكبر من الحاوية للسماح بقص الأطراف */
+  transform: translateX(-8.5%); /* لضبط تمركز المنتج الأوسط تماماً */
+  flex-wrap: nowrap; /* منع الكروت من النزول تحت بعضها نهائياً */
+   width: max-content;
+}
+
+.product-card-simple {
+  flex: 0 0 350px; /* عرض ثابت لكل كارد لضمان ثبات التصميم */
+  text-align: center;
+  transition: transform 0.5s ease;
+  border-radius: 16px;
+ min-height: 650px;
+  display: flex; /* تحويل الكارت نفسه لـ Flex */
+  flex-direction: column; /* ترتيب العناصر فوق بعضها */
+}
+
+/* حاوية الصورة */
+.product-img-box {
+  min-width: 100%;
+  height: 450px; /* ارتفاع كبير للصورة */
+  overflow: hidden;
+  margin-bottom: 15px;
+  border-radius: 16px;
+  
+}
+
+.product-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* لعمل الزوم من النص */
+  object-position: center;
+  transition: transform 0.5s ease;
+  border-radius: 16px;
+}
+
+/* تأثير بسيط عند الهوفر تمهيداً للأنميشن */
+.product-card-simple:hover img {
+  transform: scale(1.1); /* زوم ناعم للصورة */
+}
+
+/* تفاصيل المنتج */
+.product-info-simple {
+  font-family: 'Cinzel', serif;
+  flex-grow: 1; /* اجعل هذا الجزء يتمدد ليملأ الفراغ */
+}
+
+.p-name {
+  font-size: 2.1rem;
+  margin: 15px 0 10px;
+  font-weight: 900;
+  min-height: 2.4em; /* تثبيت مساحة لسطرين من الاسم حتى لو كان الاسم سطر واحد */
+}
+
+.p-rating {
+  font-size: 1.35rem;
+  margin-bottom: 7px;
+  letter-spacing: 3px;
+}
+
+.p-purchases {
+  font-family: sans-serif;
+  font-size: 1.2rem;
+  margin-left: 7px;
+  opacity: 0.7;
+}
+
+.p-price {
+    margin-top: auto; /* هذا هو السحر! سيدفع السعر والتقييم للأسفل دائماً */
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+
+
+
+.explore-btn2 {
+  margin-top: 50px;
+  padding: 15px 50px;
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  border: none;
+  border-radius: 50px; /* شكل كبسولة فخم */
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.explore-btn2:hover {
+  transform: translateY(-5px) scale(1.05); /* حركة للأعلى مع تكبير بسيط */
+  letter-spacing: 6px; /* زيادة التباعد عند الهوفر */
+  /* تقوية الظل عند الهوفر */
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4); 
+}
+
+/* إضافة لمسة بريق (Shiny effect) تتحرك فوق الزر */
+.explore-btn2::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: all 0.6s;
+}
+
+.explore-btn2:hover::before {
+  left: 100%;
+}
+
+.explore-btn2:active {
+  transform: translateY(0) scale(0.98); /* تأثير الضغط */
+}
+
+
+
+@media (max-width: 1024px) {
+  /* 1. تصغير العنوان الرئيسي وقيمة التباعد */
+  .best-seller-text {
+    font-size: 2.8rem; /* من 3.6rem */
+    margin-top: 20px;
+  }
+
+  /* 2. تصغير حاوية العرض الرئيسية لضمان احتواء الكروت */
+  .best-seller-main-wrapper {
+    min-width: 90%; /* تكبير المساحة قليلاً لتقليل حجم الأطراف المقطوعة */
+    max-width: 95%;
+    margin: 30px auto;
+   
+  }
+
+  /* 3. تصغير الكارت والصور بالتوازي */
+  .product-card-simple {
+    flex: 0 0 290px; /* من 350px - تصغير عرض الكارت */
+    min-height: 520px; /* من 650px */
+    
+    gap: 20px;
+    
+  }
+
+  .product-img-box {
+    height: 380px; /* من 450px */
+    border-radius: 12px;
+     
+  }
+
+  /* 4. تصغير النصوص داخل الكارت */
+  .p-name {
+    font-size: 1.6rem; /* من 2.1rem */
+    margin: 5px 0 2px;
+
+  }
+
+  .p-rating {
+    font-size: 1.1rem; /* من 1.35rem */
+  }
+
+  .p-price {
+    font-size: 1.5rem; /* من 1.8rem */
+  }
+
+  /* 5. تصغير زر Explore */
+  .explore-btn2 {
+    margin-top: 7px;
+    padding: 12px 40px;
+    font-size: 0.95rem;
+    letter-spacing: 3px;
+  }
+}
+
+
+
+
+@media (max-width: 900px) {
+  /* 1. تصغير العنوان الرئيسي بشكل أكبر ليناسب الشاشة */
+  .best-seller-text {
+    font-size: 2.2rem; 
+    letter-spacing: 1px;
+  }
+
+  /* 2. تصغير حاوية العرض */
+  .best-seller-main-wrapper {
+    max-width: 98%; /* استغلال أغلب عرض الشاشة */
+    margin: 20px auto;
+  }
+
+  /* 3. تصغير الكارت والصور (التركيز هنا) */
+  .product-card-simple {
+    flex: 0 0 240px; /* تصغير العرض من 290px إلى 240px */
+    max-height: 400px;
+    min-height: 400px;
+    gap: 15px;
+    
+  }
+
+  .product-img-box {
+    height: 270px; /* تصغير جوهري لارتفاع الصورة من 380px إلى 300px */
+    border-radius: 10px;
+  }
+
+  /* 4. موازنة النصوص الداخلية لتناسب الحجم الجديد */
+  .p-name {
+    font-size: 1.3rem;
+    min-height: 2.2em; /* الحفاظ على سطرين لكن بحجم أصغر */
+    
+    margin-top: -15px;
+  }
+
+  .p-rating {
+    font-size: 1rem;
+    letter-spacing: 2px;
+      
+         margin-top: -10px;
+  }
+
+  .p-purchases {
+    font-size: 0.9rem;
+  padding-top: 15px;
+   
+  }
+
+  .p-price {
+    font-size: 1.3rem;
+  
+    
+  }
+
+  /* 5. تصغير الزر ليتناسب مع الكارت الصغير */
+  .explore-btn2 {
+
+    padding: 10px 30px;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+  }
+}
+
+
+@media (max-width: 430px) {
+  /* 1. تصغير العنوان ليتناسب مع عرض الموبايل */
+  .best-seller-text {
+    font-size: 1.6rem; 
+    letter-spacing: 1px;
+    margin-top: 15px;
+    padding-bottom: 5px;
+  }
+  
+  .best-seller-text::after {
+    height: 2px; /* تقليل سمك الخط السفلي */
+    width: 40px;
+  }
+
+  /* 2. حاوية العرض - تقليل الهوامش */
+  .best-seller-main-wrapper {
+    max-width: 100%; 
+    margin: 15px 0;
+    padding: 10px 0;
+  }
+
+  /* 3. تصغير الكارت والصور (الوضع المدمج) */
+  .product-card-simple {
+    flex: 0 0 190px; /* تصغير العرض ليكون مناسباً جداً للموبايل */
+    max-height: 340px;
+    min-height: 340px;
+    gap: 8px;
+    border-radius: 12px;
+  }
+
+  .product-img-box {
+    height: 200px; /* تصغير الصورة لتوفير مساحة للنصوص */
+    border-radius: 12px;
+    margin-bottom: 5px;
+  }
+
+  /* 4. موازنة النصوص لتكون مقروءة رغم صغر الحجم */
+  .p-name {
+    font-size: 1rem;
+    min-height: 2em; 
+    margin-top: 0;
+    padding: 0 5px;
+  }
+
+  .p-rating {
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    margin-top: 2px;
+  }
+
+  .p-purchases {
+    font-size: 0.75rem;
+    margin-left: 3px;
+  }
+
+  .p-price {
+    font-size: 1.1rem;
+    font-weight: 800;
+  }
+
+  /* 5. زر Explore - نسخة الموبايل الرشيقة */
+  .explore-btn2 {
+    margin-top: 10px;
+    padding: 8px 20px;
+    font-size: 0.75rem;
+    letter-spacing: 1.5px;
+    border-radius: 20px;
+  }
+
+  /* 6. تحسين التضليل الجانبي للموبايل */
+  .best-seller-main-wrapper::before,
+  .best-seller-main-wrapper::after {
+    width: 15%; /* تقليل عرض التضليل لزيادة مساحة الرؤية */
+  }
+}
+
+
+
+
+
+
+
+
+.all-products-header {
+  width: 80%; /* تحديد عرض الحاوية بـ 80% من عرض الشاشة */
+  margin: 80px auto 40px; /* هوامش: 80px من الأعلى، توسيط تلقائي من الجوانب، 40px من الأسفل */
+  display: flex; /* تفعيل نظام المرونة لترتيب العناصر داخله */
+  justify-content: space-between; /* توزيع العناصر بحيث يكون العنوان أقصى اليسار والفلتر أقصى اليمين */
+  align-items: flex-end; /* محاذاة العناصر من الأسفل لتبدو متوازنة مع الخط السفلي */
+  border-bottom: 2px solid rgba(0, 0, 0, 0.05); /* رسم خط سفلي رفيع جداً وباهت للفصل بين الأقسام */
+  padding-bottom: 20px; /* مساحة داخلية أسفل النص لرفعه عن الخط السفلي */
+
+ 
+}
+
+.all-products-title {
+  font-family: 'Cinzel', serif; /* استخدام الخط الفخم (Cinzel) المتفق عليه */
+  font-size: 3.5rem; /* حجم خط كبير جداً وواضح */
+  font-weight: 900; /* أقصى درجة من ثقل الخط (Bold جداً) */
+  text-transform: uppercase; /* تحويل جميع الحروف للغة الإنجليزية الكبيرة */
+  margin: 0; /* إلغاء أي هوامش تلقائية قد تفسد المحاذاة */
+  line-height: 1; /* تقليل المسافة العمودية للسطر ليكون النص مضغوطاً واحترافياً */
+}
+
+.filter-wrapper {
+  position: relative; /* جعل الحاوية مرجعاً للقائمة المنسدلة التي ستظهر داخلها */
+  z-index: 100; /* التأكد من ظهور القائمة فوق أي عناصر أخرى في الصفحة */
+}
+
+.filter-btn {
+  padding: 12px 25px; /* مساحة داخلية للزر: 12px طولاً و 25px عرضاً */
+  display: flex; /* ترتيب النص والأيقونة داخل الزر بنظام flex */
+  align-items: center; /* محاذاة النص والسهم عمودياً في منتصف الزر */
+  gap: 15px; /* مسافة 15px بين كلمة Sort By وبين السهم */
+  cursor: pointer; /* تغيير شكل الماوس ليد عند الوقوف على الزر */
+  border-radius: 4px; /* انحناء طفيف جداً للزوايا للحفاظ على الطابع الرسمي والفخم */
+  font-family: 'Cinzel', serif; /* توحيد الخط مع هوية المتجر */
+  font-size: 1rem; /* حجم خط متوسط ومناسب للقراءة */
+  font-weight: bold; /* جعل خط الزر عريضاً */
+  transition: all 0.3s ease; /* جعل أي تغيير في اللون أو الحجم يحدث بنعومة خلال 0.3 ثانية */
+  min-width: 250px; /* تحديد حد أدنى لعرض الزر لكي لا يتغير حجمه عند اختيار نصوص قصيرة */
+  justify-content: space-between; /* دفع النص لليسار والسهم لليمين داخل الزر */
+ 
+}
+
+.arrow-icon {
+  transition: transform 0.4s ease; /* أنميشن ناعم جداً عند دوران السهم */
+  font-size: 0.8rem; /* تصغير حجم السهم ليكون رقيقاً وغير مزعج بصرياً */
+}
+
+.arrow-icon.rotate {
+  transform: rotate(180deg); /* تدوير السهم نصف دورة عند فتح القائمة */
+}
+
+.filter-dropdown {
+  position: absolute; /* جعل القائمة تطير فوق المحتوى ولا تأخذ مساحة من التصميم */
+  top: calc(100% + 10px); /* وضع القائمة أسفل الزر مباشرة مع ترك مسافة 10px */
+  right: 0; /* محاذاة القائمة مع حافة الزر اليمنى تماماً */
+  width: 100%; /* جعل عرض القائمة مساوياً لعرض الزر */
+  list-style: none; /* إلغاء النقاط التلقائية الخاصة بالقوائم */
+  padding: 10px 0; /* مساحة داخلية من الأعلى والأسفل فقط */
+  margin: 0; /* إلغاء أي مسافات خارجية تلقائية */
+  border-radius: 4px; /* تناسق انحناء الزوايا مع الزر الرئيسي */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* ظل ناعم جداً يعطي إيحاء بأن القائمة عائمة */
+  animation: fadeInDown 0.4s ease forwards; /* تفعيل أنميشن الظهور التدريجي من الأعلى */
+  backdrop-filter: blur(10px); /* عمل تأثير زجاجي (ضبابي) للخلفية التي تقع خلف القائمة */
+}
+
+.filter-option {
+  padding: 12px 20px; /* مساحة ضغط مريحة لكل خيار داخل القائمة */
+  cursor: pointer; /* تحويل الماوس لشكل اليد عند اختيار فلتر */
+  font-family: 'Cinzel', serif; /* الحفاظ على الهوية البصرية في الخط */
+  font-size: 0.9rem; /* تصغير خط الخيارات قليلاً عن العنوان الرئيسي */
+  transition: all 0.2s ease; /* نعومة في تغيير اللون والحركة عند الهوفر */
+  opacity: 0.8; /* جعل الخيارات باهتة قليلاً في البداية لتوجيه التركيز */
+}
+
+.filter-option:hover {
+  opacity: 1; /* جعل الخيار واضحاً تماماً عند مرور الماوس عليه */
+  background-color: rgba(0, 0, 0, 0.03); /* تلوين خلفية الخيار بلون رمادي خفيف جداً */
+  padding-left: 25px; /* تأثير حركي احترافي يدفع النص لليمين قليلاً عند الوقوف عليه */
+}
+
+/* تعريف أنميشن الظهور والتحرك للأسفل */
+@keyframes fadeInDown {
+  from {
+    opacity: 0; /* تبدأ القائمة شفافة تماماً */
+    transform: translateY(-10px); /* تبدأ القائمة مرتفعة للأعلى بمقدار 10px */
+  }
+  to {
+    opacity: 1; /* تنتهي القائمة ظاهرة تماماً */
+    transform: translateY(0); /* تستقر القائمة في مكانها الطبيعي */
+  }
+}
+
+
+
+
+
+
+
+
+
+/* الحاوية الرئيسية للكروت */
+.all-products-grid {
+  width: 85%; /* عرض الحاوية */
+  margin: 40px auto; /* توسيط مع مسافة علوية */
+  display: grid; /* استخدام نظام الجريد */
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* ترتيب تلقائي للكروت بجانب بعضها */
+  gap: 30px; /* المسافة بين الكروت */
+  padding-bottom: 100px;
+}
+
+/* الكارد المظلم */
+.product-card-dark {
+  border-radius: 20px; /* حواف ناعمة جداً */
+  overflow: hidden; /* لضمان عدم خروج الصورة عن الحواف المنحنية */
+  padding: 15px; /* مسافة داخلية بين الإطار والمحتوى */
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* أنميشن ارتدادي عند الهوفر */
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1); /* ظل خفيف */
+}
+
+.product-card-dark:hover {
+  transform: translateY(-10px); /* رفع الكارد قليلاً عند مرور الماوس */
+}
+
+/* حاوية الصورة */
+.p-card-img-wrapper {
+  width: 100%;
+  height: 320px; /* ارتفاع ثابت ومتناسق للصورة */
+  position: relative; /* ضروري لوضع الزر داخله */
+  border-radius: 15px; /* حواف ناعمة للصورة */
+  overflow: hidden;
+}
+
+.p-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* جعل الصورة تغطي المساحة بالكامل دون تمطيط */
+  transition: transform 0.6s ease;
+}
+
+.product-card-dark:hover .p-card-img {
+  transform: scale(1.1); /* زوم ناعم للصورة عند الهوفر */
+}
+
+/* الزر داخل الصورة */
+.explore-btn3 {
+  position: absolute;
+  bottom: 15px; /* المسافة من الأسفل */
+  right: 15px; /* المسافة من اليمين */
+  padding: 10px 25px;
+  border: none;
+  border-radius: 50px; /* شكل كبسولة */
+  font-family: 'Cinzel', serif;
+  font-weight: bold;
+  font-size: 0.8rem;
+  cursor: pointer;
+  z-index: 5;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+}
+
+.explore-btn3:hover {
+  transform: scale(1.1);
+  letter-spacing: 1px;
+}
+
+/* تفاصيل المنتج */
+.p-card-details {
+  padding: 15px 5px 5px;
+  font-family: 'Cinzel', serif;
+}
+
+.p-card-name {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  font-weight: 700;
+  min-height: 2.8em; /* تثبيت الارتفاع لتوحيد شكل الكروت */
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* عرض سطرين فقط للاسم */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.p-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.p-card-rating {
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+}
+
+.p-card-purchases {
+  font-family: sans-serif;
+  font-size: 0.8rem;
+  margin-left: 5px;
+}
+
+.p-card-price {
+  font-size: 1.3rem;
+  font-weight: 900;
+  margin: 0;
+}
+
+
+
+/* تنسيقات خاصة للشاشات من 1290 بكسل وأقل */
+@media (max-width: 1290px) {
+  
+  /* 1. تصغير الهيدر والعنوان الرئيسي */
+  .all-products-header {
+    width: 90%; /* تكبير مساحة العرض قليلاً */
+    margin-top: 50px; /* تقليل الهامش العلوي */
+    padding-bottom: 15px;
+  }
+
+  .all-products-title {
+    font-size: 2.5rem; /* تصغير العنوان من 3.5rem إلى 2.5rem */
+  }
+
+  /* 2. تعديل زر الفلتر */
+  .filter-btn {
+    min-width: 200px; /* تقليل عرض الزر */
+    padding: 10px 18px;
+    font-size: 0.9rem;
+  }
+
+  /* 3. تعديل شبكة المنتجات (الجريد) */
+  .all-products-grid {
+    width: 90%; /* زيادة المساحة المستغلة من الشاشة */
+    gap: 20px; /* تقليل المسافات بين الكروت */
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); /* تصغير الحد الأدنى للكارد */
+  }
+
+  /* 4. تصغير أبعاد الكارد ومحتوياته */
+  .product-card-dark {
+    padding: 12px;
+    border-radius: 15px;
+  }
+
+  .p-card-img-wrapper {
+    height: 260px; /* تقليل ارتفاع الصورة من 320px إلى 260px */
+    border-radius: 12px;
+  }
+
+  /* 5. تصغير النصوص داخل الكارد */
+  .p-card-name {
+    font-size: 1rem; /* تصغير حجم اسم المنتج */
+    min-height: 2.4em;
+  }
+
+  .p-card-price {
+    font-size: 1.1rem; /* تصغير حجم السعر */
+  }
+
+  .p-card-rating {
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+  }
+
+  /* 6. تصغير زر Explore الصغير داخل الصورة */
+  .explore-btn3 {
+    padding: 8px 18px;
+    font-size: 0.7rem;
+    bottom: 10px;
+    right: 10px;
+  }
+}
+
+
+
+/* تنسيقات خاصة للشاشات من 890 بكسل وأقل (Tablets) */
+@media (max-width: 890px) {
+  
+  /* 1. تعديل الهيدر ليصبح عمودياً إذا لزم الأمر أو تصغيره بشدة */
+  .all-products-header {
+    width: 92%;
+    margin-top: 30px;
+    flex-direction: column; /* تحويل العناصر لتكون فوق بعضها */
+    align-items: flex-start; /* محاذاة لليسار */
+    gap: 20px; /* مسافة بين العنوان وزر الفلتر */
+    padding-bottom: 25px;
+  }
+
+  .all-products-title {
+    font-size: 1.8rem; /* تصغير كبير للعنوان ليناسب عرض الشاشة */
+    letter-spacing: 1px;
+  }
+
+  /* 2. تعديل زر الفلتر ليأخذ مساحة مناسبة */
+  .filter-btn {
+    min-width: 100%; /* الزر يأخذ عرض الحاوية بالكامل لسهولة الضغط بالإصبع */
+    padding: 12px 15px;
+  }
+
+  .filter-dropdown {
+    top: calc(100% + 5px); /* تقريب القائمة من الزر */
+  }
+
+  /* 3. شبكة المنتجات - جعلها تعرض كاردين فقط في الصف أو حسب المتاح */
+  .all-products-grid {
+    width: 92%;
+    gap: 15px; /* تقليل المسافات لزيادة مساحة الكروت */
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); /* تصغير الحد الأدنى للكارد بشكل كبير */
+  }
+
+  /* 4. تصغير محتوى الكارد ليناسب الحجم الصغير */
+  .product-card-dark {
+    padding: 10px;
+    border-radius: 12px;
+  }
+
+  .p-card-img-wrapper {
+    height: 200px; /* تقليل ارتفاع الصورة ليناسب عرض الكارد الصغير */
+  }
+
+  /* 5. النصوص داخل الكارد */
+  .p-card-name {
+    font-size: 0.9rem;
+    min-height: 2.2em;
+    margin-bottom: 5px;
+  }
+
+  .p-card-footer {
+    flex-direction: column; /* وضع التقييم والسعر فوق بعض لضمان المساحة */
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  .p-card-price {
+    font-size: 1rem;
+    order: -1; /* جعل السعر يظهر فوق التقييم */
+  }
+
+  .p-card-rating {
+    font-size: 0.7rem;
+  }
+
+  /* 6. زر Explore داخل الصورة */
+  .explore-btn3 {
+    padding: 6px 12px;
+    font-size: 0.6rem;
+    bottom: 8px;
+    right: 8px;
+  }
+}
+
+
+/* تنسيقات خاصة للموبايل من 430 بكسل وأقل (Mobile) */
+@media (max-width: 430px) {
+  
+  /* 1. الهيدر: تصغير المسافات والخطوط */
+  .all-products-header {
+    width: 95%; /* استغلال أكبر مساحة ممكنة */
+    margin-top: 50px;
+    margin-bottom: 25px;
+    gap: 15px;
+  }
+
+  .all-products-title {
+    font-size: 1.4rem; /* تصغير العنوان ليكون مريحاً للعين على شاشة الموبايل */
+    width: 100%;
+  }
+
+  /* 2. زر الفلتر: تقليل الارتفاع والخط */
+  .filter-btn {
+    padding: 10px 12px;
+    font-size: 0.85rem;
+    gap: 8px;
+  }
+
+  /* 3. شبكة المنتجات: عرض كارد واحد أو اثنين حسب الرغبة */
+  .all-products-grid {
+    width: 95%;
+    gap: 10px; /* تقليل الفجوات جداً */
+    /* هنا جعلناه يعرض كاردين بجانب بعض بشكل صغير جداً أو كارد واحد كبير */
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); 
+  }
+
+  /* 4. الكارد: تقليل الحواف والمسافات */
+  .product-card-dark {
+    padding: 8px;
+    border-radius: 10px;
+  }
+
+  .p-card-img-wrapper {
+    height: 170px; /* تقليل الارتفاع لمنع الحاجة للسكرول الطويل */
+    border-radius: 8px;
+  }
+
+  /* 5. تفاصيل المنتج: تبسيط تام */
+  .p-card-name {
+    font-size: 0.8rem;
+    min-height: 2em; /* تقليل المساحة المحجوزة للاسم */
+    line-height: 1.3;
+  }
+
+  .p-card-price {
+    font-size: 0.95rem; /* جعل السعر واضحاً ولكن بحجم مناسب */
+  }
+
+  .p-card-rating {
+    font-size: 0.65rem;
+    letter-spacing: 0.5px;
+  }
+
+  .p-card-purchases {
+    display: none; /* إخفاء عدد المبيعات في الموبايل لتوفير مساحة للنظر */
+  }
+
+  /* 6. زر Explore: تصغيره ليصبح كأنه أيقونة صغيرة */
+  .explore-btn3 {
+    padding: 5px 10px;
+    font-size: 0.55rem;
+    bottom: 5px;
+    right: 5px;
+  }
+}
+
+
+@media (max-width: 350px) {
+  /* 1. تقليل هوامش الصفحة الجانبية */
+  .all-products-grid {
+    width:98%; /* استغلال عرض الشاشة بالكامل تقريباً */
+    gap: 8px;   /* تقليل المسافة بين الكروت */
+    /* جعل الحد الأدنى للكارت 140px ليناسب شاشة 350px عند وجود كارتين */
+    grid-template-columns: repeat(auto-fill, minmax(135px, 1fr)); 
+  }
+
+  /* 2. تصغير الكارد ومحتوياته */
+  .product-card-dark {
+    padding: 6px; /* تقليل الحشو الداخلي */
+    border-radius: 8px;
+  }
+
+  .p-card-img-wrapper {
+    height: 140px; /* تقليل ارتفاع الصورة لتناسب صغر الكارت */
+  }
+
+  /* 3. النصوص: تصغير إضافي للخطوط */
+  .p-card-name {
+    font-size: 0.75rem; /* أصغر قليلاً */
+    margin-top: 5px;
+  }
+
+  .p-card-price {
+    font-size: 0.85rem; 
+    margin-top: 2px;
+  }
+
+  .p-card-rating {
+    font-size: 0.6rem;
+    gap: 2px;
+  }
+
+  /* 4. الهيدر والعنوان */
+  .all-products-title {
+    font-size: 1.1rem; /* تصغير العنوان الرئيسي */
+  }
+
+  .filter-btn {
+    padding: 8px 10px;
+    font-size: 0.75rem;
+  }
+
+  /* 5. زر Explore */
+  .explore-btn3 {
+    padding: 4px 8px;
+    font-size: 0.5rem;
+    letter-spacing: 0; /* إلغاء تباعد الحروف لتوفير مساحة */
+  }
+}

@@ -1,0 +1,215 @@
+.footer {
+  background: #D4AF37;
+  padding: 60px 20px 20px;
+  font-family: "Poppins", sans-serif;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+/* Brand */
+.footer-brand h2 {
+  color: #ffffff;
+  font-size: 28px;
+  margin-bottom: 12px;
+}
+
+.footer-brand p {
+  color: #ffffff;
+  line-height: 1.6;
+  max-width: 420px;
+}
+
+/* Logo Circle */
+.footer-logo {
+  width: 160px;
+  height: auto;
+  margin-bottom: 15px;
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.15));
+}
+
+/* Social */
+.footer-social {
+  display: flex;
+  gap: 18px;
+  justify-content: flex-end;
+}
+
+.social-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #D4AF37;
+  font-size: 20px;
+ 
+  text-decoration: none;
+   transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+}
+
+/* Hover Colors */
+.social-icon:hover {
+  transform: translateY(-3px);
+  background: #dcb04b;
+  color: #fff;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 40px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  color: #4a3a12;
+  font-size: 14px;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 10px; /* مسافة بين العنوان والبرجراف */
+}
+
+.footer-description {
+  max-width: 360px;   /* يخليه شكله شيك ومش عريض قوي */
+  line-height: 1.6;
+  color: #5b4a2f;     /* بني ناعم لايق مع البيج */
+  font-size: 14px;
+}
+/* عند الشاشات المتوسطة والصغيرة */
+@media (max-width: 1024px) {
+  .footer-content {
+    grid-template-columns: 1fr; /* يبقى عمود واحد */
+    text-align: center;         /* نخلي النصوص في الوسط */
+    gap: 30px;                  /* مسافة بين العناصر عمودياً */
+  }
+
+  .footer-social {
+    justify-content: center;    /* نخلي الأيقونات في الوسط */
+  }
+
+  .footer-brand {
+    flex-direction: column;     /* خلي الشعار والنص عمودي */
+    gap: 10px;                  /* مسافة بين الشعار والنص */
+  }
+  /* Logo Circle */
+.footer-logo {
+  width: 210px;
+}
+/* Brand */
+.footer-brand h2 {
+  font-size: 34px;
+  margin-bottom: 12px;
+}
+.footer-brand p {
+  font-family: 14px;
+  line-height: 1.6;
+  max-width: 460px;
+}
+}
+@media (max-width: 870px) {
+.footer-bottom{
+  margin-bottom: 80px;
+}
+}
+
+@media (max-width: 730px) {
+  .footer {
+    padding: 40px 15px 15px;
+  }
+
+  .footer-logo {
+    width: 170px; /* تصغير اللوجو */
+  }
+
+  .footer-brand h2 {
+    font-size: 28px; /* تصغير العنوان */
+  }
+
+  .footer-description,
+  .footer-brand p {
+    font-size: 14px; /* تصغير النص */
+    max-width: 340px;
+  }
+
+  .footer-social {
+    gap: 12px; /* تقليل المسافة بين الأيقونات */
+  }
+
+  .social-icon {
+    width: 45px;
+    height: 45px;
+    font-size: 18px; /* تصغير الأيقونة نفسها */
+  }
+
+  .footer-bottom {
+    font-size: 14px;
+    margin-top: 25px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* footer.css */
+
+.social-icon {
+  /* استخدام المتغيرات القادمة من React مع قيم احتياطية (Fallback) */
+  background-color: var(--default-bg, #ffffff) !important;
+  color: var(--default-color, #D4AF37) !important;
+  
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  text-decoration: none;
+  border: 1px solid var(--default-color, #D4AF37); /* إطار رقيق بنفس لون الذهب */
+  
+  /* حركة ناعمة جداً */
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+}
+
+/* تأثير الهوفر */
+.social-icon:hover {
+  /* تبديل الألوان باستخدام المتغيرات القادمة من الـ Style */
+  background-color: var(--hover-bg, #D4AF37) !important;
+  color: var(--hover-color, #ffffff) !important;
+  
+  transform: translateY(-5px) rotate(8deg); /* رفعة بسيطة مع لفة خفيفة للفخامة */
+  box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3); /* توهج ذهبي */
+}
+
+/* التأكد أن الأيقونة داخل الرابط تأخذ اللون الصحيح */
+.social-icon i {
+  color: inherit !important;
+  transition: transform 0.3s ease;
+}
+
+.social-icon:hover i {
+  transform: scale(1.1); /* تكبير الأيقونة قليلاً داخل الدائرة */
+}

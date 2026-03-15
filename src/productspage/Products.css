@@ -1,0 +1,139 @@
+/* الصفحة كاملة */
+.Products-page {
+  width: 100vw;
+  padding: 0; /* مسافة من الحواف */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+ 
+}
+
+/* البوكس الشفاف */
+.Products-box {
+  width: 98%; /* 95% من عرض الصفحة */
+  height: 400px; /* طول البوكس */
+  border-radius: 30px; /* بوردر ناعم */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* شادو ناعم */
+  position: relative;
+  top: 88px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* الزرار تحت */
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+/* المساحة الداخلية للبوكس (للـ 3D Canvas مستقبلي) */
+.box-content {
+  flex: 1; /* تاخد كل المساحة المتاحة فوق الزرار */
+  width: 100%;
+  height: 700px;
+ box-sizing: border-box;
+
+  position: relative;
+  top: 50px;
+    border-radius: 30px; /* بوردر ناعم */
+}
+.ubtan-canvas22{
+  width: 100%;
+  height: 100%;
+
+  box-sizing: border-box;
+  border-radius: 30px; /* بوردر ناعم */
+}
+
+/* زرار Explore */
+.explore-btn {
+  align-self: flex-end; /* يمين */
+  padding: 10px 25px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid #ccc; /* بوردر ناعم */
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, #ffd500, #afa793);
+  border: 1px solid #d4af37;
+  color: #ffd700; /* نص ذهبي واضح */
+  text-shadow:
+    0 0 6px rgba(255,215,0,0.6),
+    0 2px 4px rgba(0,0,0,0.7);
+  box-shadow:
+    0 6px 16px rgba(0,0,0,0.5),
+    inset 0 0 6px rgba(255,215,0,0.2);
+  transition: 0.3s;
+  margin: 0 20px 15px 0;
+  z-index: 1;
+}
+
+.explore-btn:hover {
+  background-color: rgba(255, 255, 255, 1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, #6a4c00, #3a2400);
+  box-shadow:
+    0 8px 22px rgba(0,0,0,0.7),
+    inset 0 0 10px rgba(255,215,0,0.35);
+  transform: scale(1.1);
+}
+
+/* المساحة تحت البوكس */
+.Products-bottom-space {
+  margin-top: 50px;
+  width: 95%;
+  max-width: 1200px;
+  min-height: 300px; /* مسافة فارغة للمحتوى المستقبلي */
+}
+
+@media (max-width: 1040px){
+  
+.Products-box {
+
+     top: 70px;
+}
+}
+@media (max-width: 870px){
+/* البوكس الشفاف */
+.Products-box {
+  height: 380px; /* طول البوكس */
+    
+}
+
+}
+
+@media (max-width: 870px){
+/* البوكس الشفاف */
+.Products-box {
+  height: 320px; /* طول البوكس */
+      width: 97%;
+}
+
+}
+@media (max-width: 480px){
+.Products-box {
+  height: 270px; /* طول البوكس */
+  top: 60px;
+
+
+}
+}
+@media (max-width: 400px){
+.Products-box {
+  height: 220px; /* طول البوكس */
+  top: 50px;
+  width: 96%;
+
+}
+  .explore-btn {
+    padding: 6px 15px; /* قلل البادينج */
+    font-size: 14px;   /* صغر الخط */
+    font-size: 11px;
+  }
+}
+@media (min-height: 800px){
+ /* البوكس الشفاف */
+.Products-box {
+  height: 520px; /* طول البوكس */
+}
+}

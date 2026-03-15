@@ -1,0 +1,1055 @@
+/* --- استيراد الخط الملكي --- */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap');
+
+/* --- الحاوية الرئيسية للصفحة بالكامل --- */
+.main-product-wrapper {
+    overflow-x: hidden;
+    font-family: 'Cinzel', serif;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    width: 100%;
+    /* تم تغيير height إلى min-height لضمان عدم قص المحتوى في الشاشات الصغيرة */
+    min-height: 100vh;
+    align-items: flex-start; 
+    justify-content: space-between;
+    padding: 80px 5% 0px 5%;
+      
+}
+
+/* --- تنسيق فيديوهات الخلفية (Seamless Loop) --- */
+.bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: 0;
+    transition: opacity 1.5s ease-in-out;
+}
+
+/* --- الحاوية المرنة للمحتوى (فوق الفيديو) --- */
+.main-content-container {
+     overflow: hidden !important; /* يمنع ظهور شريط التمرير ويخفي الزيادات */
+    position: relative;
+    z-index: 2;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: -40px;
+    /* إضافة wrap للسماح بنزول العناصر تحت بعضها عند ضيق الشاشة */
+  min-height: 700px;
+  max-height: 700px;
+
+    box-sizing: border-box;
+    /* --- الحل: إلغاء السكرول نهائياً --- */
+  
+
+}
+
+/* --- المساحة الفارغة المخصصة لمجسم الـ 3D (يسار) --- */
+.left-visual-space {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    /* استخدام min-width بدلاً من العرض الثابت */
+    min-width: 320px; 
+    min-height: 700px;
+  max-height: 700px;
+
+
+
+}
+
+.cccc {
+    width: 100%;
+    min-height: 600px;
+  max-height: 600px;
+    outline: none;
+ 
+}
+
+/* --- مساحة التفاصيل والنصوص (يمين) --- */
+.right-details-space {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 40px;
+    min-width: 320px;
+}
+
+/* --- الترتيب الرأسي (المربع -> الكلمات -> الزر) --- */
+.details-vertical-stack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px; 
+    width: 100%;
+}
+
+/* --- المربع الذهبي الأساسي الذي يحتوي الوصف --- */
+.golden-info-box {
+    border: 2px solid #D4AF37;
+    padding: 40px 30px;
+    /* الحل الجذري: استخدام عرض نسبي مع حد أقصى ثابت */
+    width: 100%;
+    max-width: 450px; 
+    background: transparent;
+    text-align: center;
+    backdrop-filter: blur(5px);
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+/* --- اسم المنتج داخل المربع --- */
+.product-name {
+    color: #D4AF37;
+    font-size: 2.5rem;
+    letter-spacing: 5px;
+    margin-bottom: 20px;
+}
+
+/* --- حاوية الفاصل (الخطوط والأيقونة) داخل المربع --- */
+.divider-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin: 25px 0;
+}
+
+.divider-section .line {
+    height: 1px;
+    width: 60px;
+    background-color: #D4AF37;
+}
+
+.gold-icon {
+    color: #D4AF37;
+    font-size: 1.5rem;
+}
+
+/* --- وصف المنتج النصي --- */
+.product-description {
+    color: #977a1d;
+    line-height: 1.8;
+    font-size: 1rem;
+    margin-bottom: 40px;
+}
+
+/* --- حاوية الكلمات الإضافية تحت المربع --- */
+.extra-info-row {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.info-text-group {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: #D4AF37;
+    font-size: 1.3rem;
+    letter-spacing: 3px;
+}
+
+.small-gold-icon {
+    font-size: 1.4rem;
+    color: #D4AF37;
+}
+
+.elegant-thin-line {
+    width: 280px;
+    max-width: 80%; /* لضمان عدم خروج الخط عن الشاشات الصغيرة */
+    height: 1.3px;
+    background: linear-gradient(90deg, transparent, #D4AF37, transparent);
+    opacity: 0.4;
+}
+
+/* --- زر الإضافة للسلة --- */
+.add-to-cart-gold {
+    background: linear-gradient(90deg, 
+        #000000 0%, 
+        #997a2d 20%, 
+        #e1cc94 50%, 
+        #997a2d 80%, 
+        #000000 100%);
+    color: #fff;
+    border: 1px solid #D4AF37;
+    padding: 18px 65px;
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: 4px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
+    text-transform: uppercase;
+    white-space: nowrap; /* منع انكسار نص الزر */
+}
+
+.add-to-cart-gold:hover {
+    background: linear-gradient(90deg, #1a1a1a 0%, #D4AF37 50%, #1a1a1a 100%);
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+    color: #fff;
+    letter-spacing: 5px;
+}
+
+/* --- الحاوية السفلية تحت الكانفاس --- */
+.future-under-product-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* تعديل المرجن السالب ليكون أكثر استقراراً */
+    margin-top: -80px; 
+    gap: 15px;
+    pointer-events: none;
+    width: 100%;
+    margin-left: -110px;
+}
+
+.product-highlights {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+    font-weight: 900;
+    text-transform: uppercase;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+    line-height: 1.1;
+    
+}
+
+.product-price-tag {
+    font-family: 'Cinzel', serif;
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    position: relative;
+    margin-top: 5px;
+}
+
+.product-price-tag .price-value, 
+.product-price-tag .currency {
+    background: linear-gradient(180deg, #fcf6ba 0%, #bf953f 45%, #8a6d3b 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.5));
+}
+
+.product-price-tag .currency {
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+.product-price-tag .price-value {
+    font-size: 3.5rem;
+    font-weight: 700;
+    letter-spacing: -2px;
+    line-height: 1;
+}
+
+.product-price-tag::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.6), transparent);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* --- التنسيقات القديمة موجودة ضمناً وسيتم دمج الجديد معها --- */
+
+.how-to-use-section {
+    position: relative;
+    width: 100%;
+    margin-top: 200px;
+    padding-bottom: 100px;
+    z-index: 5;
+    text-align: center;
+
+}
+
+.usage-title {
+ 
+    font-size: 3rem;
+    letter-spacing: 15px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+     color: #D4AF37;
+  
+}
+
+/* حاوية الماركي (الممر) */
+.marquee-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden; /* العناصر تخرج خارج الشاشة لكن لا تظهر سكرول */
+    padding: 20px 0;
+}
+
+/* المجمع الذي يتحرك */
+.marquee-wrapper {
+    display: flex;
+    gap: 30px;
+    width: fit-content;
+}
+
+/* الكارت الزجاجي */
+.usage-card {
+    min-width: 280px;
+    height: 350px;
+    background: rgba(255, 255, 255, 0.05); /* خلفية شفافة جداً */
+    backdrop-filter: blur(15px); /* تأثير الزجاج */
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    transition: transform 0.3s ease;
+}
+
+.usage-card:hover {
+    border-color: #D4AF37;
+    transform: translateY(-10px);
+}
+
+.usage-icon {
+    font-size: 4rem;
+    color: #D4AF37;
+    margin-bottom: 25px;
+    filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.5));
+}
+
+.card-divider {
+    width: 60px;
+    height: 2px;
+    background: #D4AF37;
+    margin-bottom: 20px;
+}
+
+.usage-text {
+    color: #d4a524;
+    font-size: 1.3rem;
+    font-weight: 600;
+    line-height: 1.6;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+   
+}
+
+/* منع انكماش الحاوية الرئيسية */
+.main-product-wrapper {
+    min-height: 100vh;
+    display: block; /* تغيرت من flex لتسمح بالعناصر تحت بعضها */
+    padding-top: 80px;
+}
+
+
+
+
+
+
+/* حاوية العنوان والأسهم */
+
+
+
+/* تنسيق حاوية الأسهم */
+.usage-controls {
+    display: flex;
+    gap: 20px;
+   justify-content: flex-end;
+}
+
+.control-btn {
+    background: transparent;
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    color: #D4AF37;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.2rem;
+    backdrop-filter: blur(5px);
+ 
+}
+
+.control-btn:hover {
+    background: #D4AF37;
+    color: #000;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
+    transform: scale(1.1);
+}
+
+/* تأكد من أن الـ marquee-wrapper مسموح له بالتحرك */
+.marquee-wrapper {
+    display: flex;
+    gap: 30px;
+    width: fit-content;
+    will-change: transform; /* لتحسين أداء الانميشن */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* --- قسم التعليقات الفاخر (Modern Luxury) --- */
+.reviews-section {
+    padding: 120px 5%;
+    margin-top: 50px;
+}
+
+.reviews-header {
+    margin-bottom: 80px;
+    text-align: left;
+}
+
+.reviews-main-title {
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    letter-spacing: -2px; /* تقليل المسافة يعطي مظهر عصري أكثر */
+    line-height: 0.9;
+    margin: 0;
+    /* تدريج ذهبي مطفي (Matt Gold) ليظهر بوقار على الأبيض */
+    background: linear-gradient(135deg, #856404 0%, #D4AF37 50%, #856404 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.gold-elegant-line {
+    width: 100%; /* خط قصير وسميك أكثر فخامة من الخط الطويل */
+    height: 4px;
+    background: #D4AF37;
+    margin-top: 15px;
+    
+}
+
+.reviews-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+}
+
+.review-wide-card {
+    position: relative;
+    display: flex;
+    width: 100%;
+    padding: 60px 40px;
+    background: #ffffff;
+    /* بوردر مزدوج خفيف جداً */
+    border: 1px solid #eee; 
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    overflow: hidden;
+    cursor: default;
+    
+}
+
+
+
+
+.review-wide-card:hover {
+    box-shadow: 0 30px 60px rgba(0,0,0,0.08);
+    transform: translateY(-10px);
+    border-color: transparent;
+}
+
+.review-wide-card:hover::before {
+    transform: scaleY(1);
+}
+
+.review-card-left {
+    flex: 0 0 250px;
+    z-index: 1;
+}
+
+.reviewer-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    color: #1a1a1a; /* الاسم بالأسود ليعطي هيبة */
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.gold-star {
+    color: #D4AF37;
+    font-size: 0.8rem;
+    margin-right: 3px;
+    /* بدون Glow ليكون التصميم Clean */
+  
+}
+
+.review-card-right {
+    flex: 1;
+    padding-left: 60px;
+    position: relative;
+    z-index: 1;
+}
+
+/* الفاصل العمودي الأنيق */
+.review-card-right::after {
+    content: '';
+    position: absolute;
+    left: 0; top: 10%;
+    width: 1px; height: 80%;
+    background: linear-gradient(to bottom, transparent, #D4AF37, transparent);
+}
+
+.reviewer-comment {
+    font-size: 1.3rem;
+    line-height: 1.7;
+    font-family: 'Georgia', serif; /* خط سيرف كلاسيكي مريح للقراءة */
+    color: #D4AF37;
+    font-style: italic;
+}
+
+
+
+
+@media screen and (max-width: 1024px) {
+    /* تصغير الحاوية الكلية لضمان عدم خروج العناصر */
+    .main-content-container {
+        transform: scale(0.9); /* تصغير المحتوى بالكامل بنسبة 10% */
+        transform-origin: top center;
+        gap: 20px;
+        margin-top: -70px;
+      
+        padding-bottom: 120px;
+    }
+
+    /* تصغير المربع الذهبي */
+    .golden-info-box {
+        max-width: 350px;
+        padding: 25px 20px;
+        margin-top: 50px;
+        
+    }
+
+    /* تصغير نصوص المنتج */
+    .product-name {
+        font-size: 1.8rem;
+        letter-spacing: 3px;
+    }
+
+    .product-description {
+        font-size: 0.85rem;
+        line-height: 1.6;
+        margin-bottom: 20px;
+       
+    }
+
+
+
+    .left-visual-space {
+
+    min-width: 320px; 
+    min-height: 500px;
+    max-height: 500px;
+
+
+
+}
+
+    /* تصغير الكانفاس */
+    .cccc {
+        min-height: 500px;        
+        max-height: 500px;
+       
+    }
+
+    /* تصغير منطقة السعر والمميزات */
+    .product-highlights {
+        font-size: 1.3rem;
+       
+    }
+
+    .product-price-tag .price-value {
+        font-size: 2.5rem;
+    }
+
+    .product-price-tag .currency {
+        font-size: 1.8rem;
+    }
+
+    /* تصغير زر الإضافة للسلة */
+    .add-to-cart-gold {
+        padding: 17px 70px;
+        font-size: 1.3rem;
+        letter-spacing: 2px;
+    }
+
+    /* تصغير قسم "How To Use" */
+    .usage-title {
+        font-size: 2.2rem;
+        letter-spacing: 10px;
+         margin-top: -170px;
+    }
+
+    .usage-card {
+        min-width: 220px;
+        height: 280px;
+        padding: 20px;
+    }
+
+    .usage-icon {
+        font-size: 2.8rem;
+    }
+
+    .usage-text {
+        font-size: 1rem;
+    }
+
+
+
+
+
+    .reviews-section{
+        width: 97vw;
+       
+        margin-left: -35px;
+        padding:-50px 0 0 0;
+       
+        
+
+    }
+    .review-wide-card{
+      
+        padding: 40px;
+        
+    }
+    /* تصغير قسم التعليقات */
+    .reviews-main-title {
+        font-size: 3.5rem;
+      
+    }
+
+    .reviewer-name {
+        font-size: 1.3rem;
+       
+    }
+
+    .reviewer-comment {
+        font-size: 1.1rem;
+       
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 750px) {
+    /* 1. إعادة ضبط الحاوية الرئيسية */
+    .main-product-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 20px;
+        min-height: auto;
+     
+    }
+
+    .main-content-container {
+        flex-direction: column;
+        transform: scale(1); /* نلغي السكيل القديم لنضبط الأحجام يدوياً */
+        max-height: none;
+        min-height: auto;
+        margin-top: 0;
+        gap: 0;
+       
+    }
+
+    /* 2. جعل المنتج في المنتصف مع تأثير الدائرة */
+    .left-visual-space {
+        order: 1; /* المجسم يظهر أولاً أو ثانياً حسب الرغبة */
+        width: 100%;
+        min-height: 400px;
+        max-height: 450px;
+        justify-content: center;
+        /* سننقل الدائرة الذهبية لتكون خلف الموديل مباشرة في الموبايل */
+        background-position: center center !important;
+        background-size: 280px auto !important;
+        
+    }
+
+    .cccc {
+        min-height: 400px;
+        max-height: 400px;
+        max-width: 250px;
+        min-width: 250px;
+       
+    }
+
+    /* 3. تنسيق السعر والمميزات بشكل مبتكر (تحت المنتج مباشرة) */
+    .future-under-product-content {
+        order: 2;
+        margin-top: -30px;
+        margin-left: 0;
+        margin-bottom: 40px;
+       
+    }
+.product-highlights {
+   
+        font-size: 1.9rem;        /* تكبير الحجم (كان 1.1) */
+        letter-spacing: 1px;      /* زيادة التباعد لإضفاء لمسة فخامة */
+        width: 100%;
+      
+    }
+
+    .product-price-tag .price-value {
+        font-size: 2.8rem;
+    }
+
+    /* 4. صندوق المعلومات (بشكل "عائم" وأنيق) */
+    .right-details-space {
+        order: 3;
+        width: 100%;
+        padding-top: 0;
+    }
+
+    .golden-info-box {
+        max-width: 100%;
+        border-left: none;
+        border-right: none;
+        background: rgba(0, 0, 0, 0.2);
+        padding: 30px 15px;
+        margin-bottom: 30px;
+    }
+
+    .product-name {
+        font-size: 1.6rem;
+        letter-spacing: 2px;
+    }
+
+    /* 5. إخفاء العناصر الزائدة لتقليل الفوضى في الموبايل */
+    .elegant-thin-line, 
+    .extra-info-row {
+        display: none; 
+    }
+
+    /* 6. زر الشراء (ثابت أو عريض في الأسفل) */
+    .add-to-cart-gold {
+        width: 90%;
+        padding: 15px 0;
+        font-size: 1rem;
+        position: relative;
+        bottom: 0;
+    }
+
+
+
+
+
+    
+    /* تصغير قسم "How To Use" */
+    .usage-title {
+       
+        letter-spacing: 2px;        /* تقليل التباعد بين الحروف */
+        margin-top: -170px;         /* تقليل الإزاحة العلوية لتجنب الفراغ الكبير */
+        margin-bottom: 10px;
+    }
+
+    .usage-card {
+        min-width: 180px;           /* تصغير عرض الكارت */
+        height: 240px;              /* تصغير طول الكارت */
+        padding: 15px;              /* تقليل الحواف الداخلية */
+    }
+
+    .usage-icon {
+        font-size: 2.2rem;          /* تصغير الأيقونة */
+        margin-bottom: 15px;
+    }
+
+    .usage-text {
+        font-size: 0.85rem;         /* تصغير النص */
+    }
+
+
+
+
+    /* تصغير قسم التعليقات */
+    .reviews-section {
+        width: 100vw;               /* جعل العرض كامل الشاشة */
+        margin-left: -25px;             /* إلغاء الإزاحة السالبة لتجنب مشاكل العرض */
+        padding: 40px 10px;         /* ضبط الـ padding ليكون موجباً ومنظماً */
+    }
+
+
+
+    .gold-elegant-line {
+    width: 80vw !important; /* خط قصير وسميك أكثر فخامة من الخط الطويل */
+   
+}
+
+
+    .reviews-main-title {
+        font-size: 2.5rem;          /* تصغير العنوان الرئيسي */
+        display: flex !important;
+        justify-content: flex-start !important;
+
+    }
+
+    .review-wide-card {
+        padding: 18px 12px;         /* تصغير مساحة كارت التعليق */
+       
+    }
+
+    .reviewer-name {
+        font-size: 1.1rem;          /* تصغير اسم الشخص */
+         
+         width: fit-content;
+         padding: 0;
+    }
+
+    .reviewer-comment {
+        font-size: 0.95rem;         /* تصغير نص التعليق */
+        line-height: 1.5;           /* ضبط تباعد الأسطر */
+     
+        width: 100%;
+        padding: 0;
+
+    }
+
+  
+}
+
+
+
+@media screen and (max-width: 550px) {
+    /* --- تصغير قسم How To Use (550px) --- */
+    .usage-title {
+        font-size: 2.1rem !important;
+        letter-spacing: 1.5px !important;
+        margin-top: -200px !important; /* تقليل الفراغ أكثر */
+        
+    }
+
+
+/* تصغير حاوية الأسهم */
+    .usage-controls {
+        gap: 12px;                  /* تقليل المسافة بين السهمين */
+        margin-top: 10px;           /* ضبط المسافة العلوية */
+    }
+
+    /* تصغير الأزرار نفسها */
+    .control-btn {
+        width: 35px !important;     /* تصغير العرض من 50px إلى 35px */
+        height: 35px !important;    /* تصغير الطول من 50px إلى 35px */
+        font-size: 0.9rem !important; /* تصغير حجم السهم (الأيقونة) بالداخل */
+        border: 1px solid rgba(212, 175, 55, 0.3) !important; /* تنحيف الإطار */
+    }
+
+    .control-btn:hover {
+        transform: scale(1.05);     /* تقليل تأثير التكبير عند اللمس ليناسب الموبايل */
+    }
+
+
+
+
+    .usage-card {
+        min-width: 150px !important;   /* كروت أصغر لتناسب عرض الشاشة */
+        height: 200px !important;
+        padding: 10px !important;
+        border-radius: 12px !important;
+    }
+
+    .usage-icon {
+        font-size: 1.8rem !important;   /* أيقونات أنعم */
+        margin-bottom: 10px !important;
+    }
+
+    .usage-text {
+        font-size: 0.75rem !important;  /* نص صغير ومقروء */
+        letter-spacing: 0.5px !important;
+    }
+
+
+
+
+
+
+.review-card-left{
+   
+    max-height: 40px;
+}
+.review-card-right{
+ margin-top: 10px;
+      padding: 0;
+}
+
+
+.review-wide-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* تقليل الفراغ بين العناصر الثلاثة (الاسم، الخط، التعليق) */
+    gap: 4px !important; 
+    padding: 12px 15px !important;
+}
+
+.reviewer-info-left {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+}
+
+.reviewer-name {
+    font-size: 1rem;
+    /* حذف الهوامش الافتراضية التي تدفع العناصر بعيداً */
+    margin: 0 !important; 
+    padding: 0 !important;
+    line-height: 1.2;
+    
+}
+
+/* إذا كان هناك حاوية للنجوم، تأكد من حذف هوامشها أيضاً */
+.stars-container {
+    margin: 0 !important;
+    line-height: 1;
+}
+
+.review-vertical-divider {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to right, #D4AF37, transparent) !important;
+    /* تقليل المسافة حول الخط الفاصل */
+    margin: 4px 0 !important; 
+    opacity: 0.4;
+}
+
+.reviewer-comment-right {
+    width: 100%;
+    font-size: 0.85rem;
+    /* حذف الهامش العلوي والسفلي للتعليق */
+    margin: 0 !important; 
+    padding: 0 !important;
+    line-height: 1.4;
+    background: transparent; /* شيل اللون الأحمر بعد التأكد من المساحة */
+}
+   /* 1. تقليل الحشو العام */
+    .main-product-wrapper {
+        padding: 20px 10px !important;
+    }
+
+    /* 2. تصغير مساحة المنتج والمجسم */
+    .left-visual-space {
+        min-height: 320px !important;
+        max-height: 350px !important;
+        background-size: 220px auto !important; /* تصغير الدائرة الذهبية خلفه */
+    }
+
+    .cccc {
+        min-height: 320px !important;
+        max-height: 320px !important;
+        max-width: 200px !important;
+        min-width: 200px !important;
+    }
+
+    /* 3. تصغير السعر والمميزات */
+    .future-under-product-content {
+        margin-top: -20px !important;
+        margin-bottom: 25px !important;
+    }
+
+    .product-highlights {
+        font-size: 1.4rem !important; /* تصغير الكلمات التوضيحية */
+        letter-spacing: 0.5px !important;
+    }
+
+    .product-price-tag .price-value {
+        font-size: 2.2rem !important; /* تصغير السعر */
+    }
+
+    .product-price-tag .currency {
+        font-size: 0.9rem !important;
+    }
+
+    /* 4. تصغير صندوق المعلومات والنصوص */
+    .golden-info-box {
+        padding: 20px 10px !important;
+        margin-bottom: 20px !important;
+    }
+
+    .product-name {
+        font-size: 1.3rem !important; /* تصغير اسم المنتج */
+        letter-spacing: 1px !important;
+    }
+
+    .product-description {
+        font-size: 0.85rem !important; /* تصغير الوصف */
+        line-height: 1.4 !important;
+    }
+
+    /* 5. زر الشراء */
+    .add-to-cart-gold {
+        width: 100% !important; /* لملء العرض الصغير */
+        padding: 12px 0 !important;
+        font-size: 0.9rem !important;
+    }
+    
+    /* تصغير الـ Divider إذا وجد */
+    .divider-section .line {
+        width: 60px !important;
+    }
+}
+
+
+

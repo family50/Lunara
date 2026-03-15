@@ -1,0 +1,426 @@
+.more-products-section { /* سكشن المنتجات */
+  width: 100%; /* عرض كامل */
+  padding: 60px 0; /* مسافة رأسية */
+  display: flex; /* فليكس */
+  flex-direction: column; /* ترتيب عمودي */
+  align-items: center; /* توسيط أفقي */
+  gap: 40px; /* مسافة بين العناصر */
+  position: relative; /* مرجع للأزرار */
+}
+
+.more-products-title { /* عنوان السكشن */
+  font-family: 'Cinzel', serif; /* خط فاخر */
+  font-size: 38px; /* حجم كبير */
+  letter-spacing: 3px; /* تباعد أحرف */
+  color: #D4AF37;
+     background: linear-gradient(to right, #D4AF37 20%, #F7EF8A 50%, #D4AF37 80%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block; 
+  text-align: center; /* توسيط */
+}
+
+.more-products-container { /* الحاوية الأفقية */
+  width: 85%; /* عرض مناسب */
+  display: flex; /* عرض أفقي */
+  gap: 30px; /* مسافة بين الكروت */
+  overflow-x: auto; /* تمرير أفقي */
+  overflow-y: hidden; /* منع الرأسي */
+  scroll-behavior: smooth; /* تمرير ناعم */
+  padding-bottom: 10px; /* مسافة تحت */
+}
+
+.more-products-container::-webkit-scrollbar { /* شريط التمرير */
+  display: none; /* إخفاءه */
+}
+
+.more-card { /* الكارت */
+  min-width: 240px; /* أقل عرض */
+  display: flex; /* فليكس */
+  flex-direction: column; /* ترتيب عمودي */
+  gap: 10px; /* مسافة داخلية */
+  color: #D4AF37;
+  font-family: 'Cinzel', serif; /* نفس الخط */
+}
+
+.image-box { /* حاوية الصورة */
+  position: relative; /* مرجع للزر */
+  width: 100%; /* عرض كامل */
+  height: 300px; /* ارتفاع ثابت */
+  overflow: hidden; /* قص الزائد */
+  border-radius: 14px; /* حواف ناعمة */
+}
+
+.image-box img { /* الصورة نفسها */
+  width: 100%; /* عرض كامل */
+  height: 100%; /* ارتفاع كامل */
+  object-fit: cover; /* قص ذكي */
+  transition: 0.6s; /* حركة ناعمة */
+}
+
+.image-box:hover img { /* عند الهوفر */
+  transform: scale(1.1); /* تكبير بسيط */
+}
+
+.go-btn {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+
+  background: linear-gradient(135deg, #ffd500, #afa793);
+  border: 1px solid #d4af37;
+
+  padding: 9px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 1px;
+
+  color: #ffd700; /* نص ذهبي واضح */
+
+  text-shadow:
+    0 0 6px rgba(255,215,0,0.6),
+    0 2px 4px rgba(0,0,0,0.7);
+
+  box-shadow:
+    0 6px 16px rgba(0,0,0,0.5),
+    inset 0 0 6px rgba(255,215,0,0.2);
+
+  transition: 0.3s;
+}
+
+.go-btn:hover {
+  background: linear-gradient(135deg, #6a4c00, #3a2400);
+
+  box-shadow:
+    0 8px 22px rgba(0,0,0,0.7),
+    inset 0 0 10px rgba(255,215,0,0.35);
+
+  transform: scale(1.1);
+}
+
+.more-card h3 {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: #D4AF37;
+  transition: color 0.3s;
+}
+
+.more-card h3:hover {
+  color: #d4af37; /* تغيير لون الاسم عند hover */
+}
+
+.more-card p {
+  font-size: 18px;
+  font-weight: 600;
+   color: #D4AF37;
+}
+
+.more-card span {
+  font-size: 16px;
+  font-weight: 500;
+  color: #d4af37; /* لون ذهبي للتقييم */
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.more-card span::before { /* أيقونة نجمة قبل التقييم */
+  content: "★";
+  color: #ffd700;
+  font-size: 16px;
+}
+
+
+
+
+
+
+
+
+
+
+.scroll-btn {
+  position: absolute;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* خلفية زجاجية */
+  background: rgba(255, 215, 0, 0.15); /* شفاف مع لون ذهبي خفيف */
+  backdrop-filter: blur(10px); /* تأثير زجاج */
+  -webkit-backdrop-filter: blur(10px); /* دعم Safari */
+  border: 1px solid rgba(255,215,0,0.3); /* إطار خفيف شفاف */
+
+  color: #ffd700; /* نص ذهبي */
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow:
+    0 0 6px rgba(255,215,0,0.6),
+    0 2px 4px rgba(0,0,0,0.7);
+
+  box-shadow:
+    0 6px 16px rgba(0,0,0,0.4),
+    inset 0 0 6px rgba(255,215,0,0.15);
+
+  transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+}
+
+.scroll-btn:hover {
+  transform: scale(1.1);
+  background: rgba(255, 215, 0, 0.25); /* زجاج أكثر وضوحًا عند hover */
+  box-shadow:
+    0 8px 22px rgba(0,0,0,0.5),
+    inset 0 0 10px rgba(255,215,0,0.3);
+}
+
+
+
+
+.scroll-btn.left { /* زر الشمال */
+  top: 100px; /* من الأعلى */
+  left: 7%; /* من اليسار */
+  width: 40px; /* العرض */
+  height: 40px; /* الطول */
+}
+
+.scroll-btn.right { /* زر اليمين */
+  top: 50%; /* منتصف رأسي */
+  right: 30px; /* من اليمين */
+  width: 55px; /* العرض */
+  height: 55px; /* الطول */
+}
+@media (max-width: 1210px){
+  .scroll-btn.right { /* زر اليمين */
+
+  right: 15px; /* من اليمين */
+
+}
+}
+@media (max-width: 1042px) {
+  .more-products-section {
+    padding: 40px 0; /* تقليل المسافة الرأسية */
+    
+  }
+
+  .more-products-title {
+    font-size: 30px; /* تصغير حجم العنوان */
+    letter-spacing: 2px;
+  }
+
+  .more-products-container {
+    gap: 20px; /* تقليل المسافة بين الكروت */
+
+  }
+
+  .more-card {
+    min-width: 200px; /* كروت أصغر */
+    gap: 8px;
+  }
+
+  .image-box {
+    height: 250px; /* ارتفاع أقل */
+    border-radius: 12px;
+  }
+
+  .more-card h3 {
+    font-size: 18px; /* تصغير اسم المنتج */
+    letter-spacing: 1px;
+  }
+
+  .more-card p {
+    font-size: 16px; /* تصغير السعر */
+  }
+
+  .more-card span {
+    font-size: 14px; /* تصغير التقييم */
+  }
+
+  .go-btn {
+    padding: 7px 14px; /* زر أصغر */
+    font-size: 12px;
+  }
+
+  .scroll-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+
+  .scroll-btn.right {
+    width: 50px;
+    height: 50px;
+    
+  }
+
+  .scroll-btn.left {
+    width: 35px;
+    height: 35px;
+    top: 70px;
+  }
+}
+@media (max-width: 920px) {
+.scroll-btn.right { /* زر اليمين */
+  top: 50%; /* منتصف رأسي */
+  right: 10px; /* من اليمين */
+  width: 45px; /* العرض */
+  height: 45px; /* الطول */
+}
+}
+
+@media (max-width: 870px){
+  .more-products-section { /* سكشن المنتجات */
+
+margin-top: -30px;
+}
+.scroll-btn.right { /* زر اليمين */
+  top: 72px; /* منتصف رأسي */
+  right: 20px; /* من اليمين */
+  width: 35px; /* العرض */
+  height: 35px; /* الطول */
+}
+  .scroll-btn.left {
+    left: 20px;
+    top: 70px;
+  }
+  .more-products-container {
+
+  width: 95%;
+
+  }
+}
+
+@media (max-width: 730px) {
+  .more-products-section {
+    padding: 30px 0; /* تقليل المسافة الرأسية */
+
+    margin-top: -50px;
+  }
+
+  .more-products-title {
+    font-size: 24px; /* تصغير أكبر للعنوان */
+    letter-spacing: 1.5px;
+  }
+
+  .more-products-container {
+    gap: 15px; /* تقليل المسافة بين الكروت */
+
+  }
+
+  .more-card {
+    min-width: 160px; /* كروت أصغر */
+    gap: 6px;
+  }
+
+  .image-box {
+    height: 200px; /* ارتفاع أقل للكارت */
+    border-radius: 10px;
+  }
+
+  .more-card h3 {
+    font-size: 16px; /* تصغير اسم المنتج */
+    letter-spacing: 0.5px;
+  }
+
+  .more-card p {
+    font-size: 14px; /* تصغير السعر */
+  }
+
+  .more-card span {
+    font-size: 12px; /* تصغير التقييم */
+  }
+
+  .go-btn {
+    padding: 5px 10px; /* زر أصغر */
+    font-size: 11px;
+  }
+
+  .scroll-btn {
+    width: 35px;
+    height: 35px;
+    font-size: 18px;
+  }
+  .scroll-btn.right { /* زر اليمين */
+  top: 58px; /* منتصف رأسي */
+  right: 10px; /* من اليمين */
+
+}
+  .scroll-btn.left {
+    left: 15px;
+    top: 58px;
+  }
+
+
+}
+@media (max-width: 550px) {
+  .more-products-section {
+    padding: 20px 0; /* تقليل المسافة الرأسية */
+    margin-top: -60px; /* تعديل المسافة العلوية */
+  }
+
+  .more-products-title {
+    font-size: 20px; /* تصغير العنوان */
+    letter-spacing: 1px;
+  }
+
+  .more-products-container {
+    gap: 10px; /* مسافة أقل بين الكروت */
+    width: 95%; /* توسيع قليل لتناسب الشاشة */
+  }
+
+  .more-card {
+    min-width: 140px; /* كروت أصغر */
+    gap: 5px;
+  }
+
+  .image-box {
+    height: 160px; /* ارتفاع أصغر للكارت */
+    border-radius: 8px;
+  }
+
+  .more-card h3 {
+    font-size: 14px; /* تصغير اسم المنتج */
+    letter-spacing: 0.3px;
+  }
+
+  .more-card p {
+    font-size: 12px; /* تصغير السعر */
+  }
+
+  .more-card span {
+    font-size: 11px; /* تصغير التقييم */
+  }
+
+  .go-btn {
+    padding: 4px 8px; /* زر أصغر */
+    font-size: 10px;
+  }
+
+  .scroll-btn {
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+  }
+
+  .scroll-btn.right {
+    width: 25px;
+    height: 25px;
+    right: 5px;
+    top: 45px;
+  }
+
+  .scroll-btn.left {
+    width: 25px;
+    height: 25px;
+    top: 40px;
+    left: 3%;
+    
+  }
+}

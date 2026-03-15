@@ -1,0 +1,182 @@
+/* الحاوية الأساسية للصفحة */  
+.page-container {  
+  width: 100%;                /* عرض الصفحة بالكامل */  
+
+  position: relative;         /* يسمح بوضع عناصر مطلقة داخله */  
+  display: flex;              /* تفعيل Flexbox */  
+  justify-content: center;    /* توسيط المحتوى أفقياً */  
+  align-items: center;        /* توسيط المحتوى عمودياً */  
+}  
+  
+/* صفحة UBTAN */   
+.RENDERFEEL-page , .page-altria-page{  
+  width: 100%;                /* الصفحة بعرض كامل */  
+  position: relative;         /* يسمح بوضع العناصر بداخله مطلقًا */  
+  display: flex;              /* Flexbox */  
+  justify-content: center;    /* توسيط المحتوى أفقياً */  
+  align-items: center;        /* توسيط المحتوى عمودياً */  
+  
+}  
+  
+/* النصوص فوق الـ 3D */   
+.RENDERFEEL-text ,.ALTRIA-text{  
+  position: absolute;         /* وضع النصوص فوق المحتوى */  
+  top: 10%;                    /* ارتفاع النص عن أعلى الصفحة */  
+  left: 50%;                  /* تحديد منتصف الشاشة أفقياً */  
+  transform: translateX(-50%); /* توسيط حقيقي */  
+  text-align: center;         /* محاذاة النص للوسط */   
+  pointer-events: none;       /* منع النص من التأثير على تفاعل المستخدم مع 3D */  
+  width: 100%;
+}  
+.RENDERFEEL-text{
+  color: #B8860B;             /* لون النص الداكن */  
+}
+ .ALTRIA-text{
+  color: #F5F5F5;
+ } 
+/* العنوان الأساسي */   
+.title-line {  
+  font-size: 3.7rem;            /* حجم كبير للعنوآن */  
+  font-weight: 800;           /* عريض جدًا */  
+  margin-bottom: 6px;        /* مسافة أسفل العنوان */  
+  letter-spacing: 1.5px;      /* تباعد الحروف للفخامة */ 
+    color: #D4AF37;
+     background: linear-gradient(to right, #D4AF37 20%, #F7EF8A 50%, #D4AF37 80%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block; 
+}  
+  
+/* الجملة التعريفية (البرجراف) */   
+.subtitle-line{  
+  font-size: 1.65rem;          /* أكبر من السابق */  
+  font-weight: 500;           /* وزن متوسط */  
+  opacity: 0.95;              /* شفافية خفيفة */  
+  margin-bottom: 7px;        /* مسافة أسفل السطر */  
+}  
+  
+/* السطر الدعائي */   
+.tagline-line {  
+  font-size: 1.4rem;           /* أكبر من السابق */  
+  font-weight: 600;           /* وزن متوسط */  
+  opacity: 0.9;              /* شفافية خفيفة */  
+}  
+  
+/* منطقة الـ3D */   
+.RENDERFEEL-3d-container {  
+  width: 100vw;                /* عرض كامل */  
+  height: 100vh;               /* ارتفاع كامل */  
+  position: relative;         /* يسمح بوضع عناصر داخله مطلقًا */  
+} 
+/* عند الشاشات الأقل من 1400px */
+@media (max-width: 1400px) {
+
+  .title-line{
+    font-size: 3.2rem;      /* بدل 4rem */
+  }
+
+  .subtitle-line{
+    font-size: 1.5rem;      /* بدل 1.8rem */
+  }
+
+  .tagline-line {
+    font-size: 1.2rem;      /* بدل 1.4rem */
+  }
+
+  .RENDERFEEL-text ,.ALTRIA-text{
+    top: 12%;               /* ننزل النص شوية لتوازن التصميم */
+  }
+}
+/* عند الشاشات الأقل من 1200px */
+@media (max-width: 1200px) {
+
+  .title-line {
+    font-size: 2.6rem;      /* أصغر من 1400px */
+  }
+
+  .subtitle-line{
+    font-size: 1.3rem;
+  }
+
+  .tagline-line{
+    font-size: 1.05rem;
+  }
+
+  .RENDERFEEL-text ,.ALTRIA-text {
+    top: 10%;                /* نرفع الكلام لفوق شوية */
+  }
+}
+/* عند الشاشات الأقل من 560px */
+@media (max-width: 560px) {
+
+  .title-line {
+    font-size: 2.3rem;     /* كان 1.9rem — كبرناه */
+  }
+
+  .subtitle-line {
+    font-size: 1.25rem;    /* كان 1.05rem — كبرناه */
+  }
+
+  .tagline-line{
+    font-size: 1.05rem;    /* كان 0.9rem — كبرناه */
+  }
+
+  .RENDERFEEL-text {
+    top: 9%;               /* نرفعها فوق بشكل بسيط */
+    padding: 0 18px;       /* مساحة جانبية مناسبة */
+  }
+}
+
+#MainProductCanvas ,#MainProductCanvas2 {
+  width: 2300px;
+ 
+  display: block;
+   touch-action: auto; 
+}
+.page-container{
+  height: 100vh;
+
+ }
+ #MainProductCanvas{
+    height: 100vh;
+ }
+@media (max-width: 1201px){
+ .page-container{
+  height: 100vh;
+
+ }
+ #MainProductCanvas{
+    height: 100vh;
+     
+ }
+}
+
+
+
+/* ===== Scrollbar for RENDER FEEL ===== */
+.render-feel-scrollbar::-webkit-scrollbar {
+  width: 10px;
+}
+
+.render-feel-scrollbar::-webkit-scrollbar-track {
+  background: #f5e2b9; /* نفس لون الخلفية */
+}
+
+.render-feel-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #8a5a00; /* بني دافي */
+  border-radius: 10px;
+  border: 2px solid #f5e2b9; /* يندمج مع الخلفية */
+}
+
+.render-feel-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: #5c3d00; /* أغمق عند hover */
+}
+.render-feel-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: #5c3d00; /* أغمق عند hover */
+}
+
+
+
+
+
+

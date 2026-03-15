@@ -1,0 +1,199 @@
+
+.container {
+  position: fixed;
+  margin: 0; /* إزالة المسافات الافتراضية للـ body */
+  padding: 0; /* إزالة الحشوة الافتراضية للـ body */
+  font-family: 'Cinzel', serif; /* الخط المستخدم للمتجر */
+  overflow-x: none; /* يسمح بالـ scroll الأفقي */
+  color: #ffffff; /* لون النصوص الأبيض بشكل افتراضي */
+  width: 100vw;
+  height: 100vh;
+  background: #f5f0e6; /* خلفية عامة كريمية فاتحة تناسب الـ luxury */
+}
+
+
+/* ===== Select Container ===== */
+#select {
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  height: 90vh;
+  gap: 20px;
+  background: transparent;
+  border-radius: 20px;
+  box-shadow: 
+    10px 10px 40px rgb(255, 255, 255),
+   -10px -10px 40px rgba(0,0,0,0.4);
+
+  width: 90vw;
+
+  margin: 40px auto; /* ⭐ 30px من فوق + توسيط عرضياً */
+ 
+}
+
+
+/* ===== DIV 1: Explore the Shop ===== */
+.div1 {
+  width:100%;
+  flex-shrink: 0; /* ⭐ مهم جدًا */
+  display: flex; /* لجعل العناصر بداخله Flex */
+  flex-direction: column; /* ترتيب العناصر عموديًا */
+  justify-content: center; /* محاذاة العناصر عموديًا للوسط */
+  align-items: flex-start; /* محاذاة العناصر أفقياً من اليسار */
+  padding: 5% 2%; /* مسافة داخلية من فوق/تحت ويمين/يسار */
+  /* صورة الخلفية */
+  background-size: cover; /* تغطي الصورة كامل الـ div */
+  background-position: center; /* توضع الصورة في منتصف الـ div */
+  border-radius: 20px; /* حواف مدورة */
+
+ 
+box-shadow: 10px 0 30px rgba(0,0,0,0.4);
+
+}
+.top{
+ width: 100%;
+  display: flex;
+   flex-direction: column; /* ترتيب العناصر عموديًا */
+  justify-content: center; /* محاذاة العناصر عموديًا للوسط */
+  align-items: center; /* محاذاة العناصر أفقياً من اليسار */
+
+  box-sizing: border-box;
+   position: absolute;
+top: 1%;
+left: 0;
+
+
+}
+/* Logo */
+.div1 .logo {
+  width: 300px; /* عرض اللوجو */
+
+  
+}
+
+.bottom {
+  position: absolute;
+  bottom: 20px;   /* مسافة من تحت */
+  left: 20px;     /* مسافة من الشمال */
+
+  
+}
+
+
+
+
+/* Store Name */
+.div1 .tagline {
+  font-size: 2.2rem; /* حجم كبير وواضح للاسم */
+  font-weight: 900; /* ثقل الخط */
+  margin: 10px 0; /* مسافة عمودية حول الاسم */
+  /* الذهب اللامع */
+  background: #ffffff;
+  -webkit-background-clip: text; /* لتطبيق التدرج على النص */
+  -webkit-text-fill-color: transparent; /* لإظهار التدرج */
+  
+  /* شادو ذهبي لإبراز النص */
+  text-shadow: 
+ 2px 2px 6px #f1d16f,
+  0 0 10px #efce6a;
+
+  text-align: start; 
+}
+
+/* Button Explore */
+.div1 #home {
+ padding: 18px 45px; /* تكبير الزر ليوازن مع الخط */
+  font-size: 1.7rem; /* تكبير الخط داخل الزر */
+  font-weight: bold; /* خط عريض */
+  border: none; /* إزالة الحدود الافتراضية */
+  border-radius: 10px; /* حواف مدورة للزر */
+  background:#f1d16f; /* Gradient ذهبي للزر */
+  color:#fff4d7 ; /* نص أبيض */
+    /* شادو ذهبي لإبراز النص */
+  text-shadow: 
+ 2px 2px 6px #f1d16f,
+  0 0 10px #efce6a;
+  
+  cursor: pointer; /* مؤشر الفأرة يصبح يد */
+  transition: transform 0.3s, box-shadow 0.3s; /* حركة سلسة عند Hover */
+ 
+}
+
+.div1 #home:hover {
+  transform: translateY(-3px); /* رفع الزر قليلاً عند Hover */
+  box-shadow: 0 10px 25px rgba(255, 255, 254, 0.926); /* إضافة شادو عند Hover */
+}
+
+/* ===== Media Query لـ شاشات أقل من 1140px ===== */
+@media (max-width: 1140px){
+
+  /* ===== DIV 1: Explore the Shop ===== */
+  .div1 .logo {
+    width: 280px; /* تصغير اللوجو */
+ 
+  }
+
+  .div1 .tagline {
+    font-size: 1.9rem; /* تصغير الوصف */
+   
+  }
+
+  .div1 #home {
+    padding: 15px 35px; /* تقليل مساحة الزر */
+    font-size: 1.2rem; /* تصغير خط الزر */
+
+}
+
+}
+@media (max-width: 830px) {
+
+  /* تصغير اللوجو */
+  .div1 .logo {
+    width: 250px;
+  }
+
+  /* تصغير النص */
+  .div1 .tagline {
+    font-size: 1.5rem;
+   
+  }
+
+  /* تصغير الزر */
+  .div1 #home {
+    padding: 12px 28px;
+    font-size: 1rem;
+  }
+
+  /* تقليل المسافة من الأطراف */
+  .bottom {
+    bottom: 15px;
+    left: 15px;
+  }
+}
+
+
+
+/* ===== Media Query لـ شاشات أقل من 410px ===== */
+@media (max-width: 410px) {
+
+  /* Div1 */
+  .div1 .logo {
+    width: 210px; /* أصغر قليلاً */
+
+  }
+
+  .div1 .store-name {
+    font-size: 2.5rem; /* تصغير العنوان */
+
+  }
+
+  .div1 .tagline {
+    font-size: 1.5rem; /* تصغير الوصف */
+
+  }
+
+  .div1 #home {
+    padding: 12px 30px; /* تصغير الزر */
+    font-size: 1rem; /* تصغير الخط داخل الزر */
+  }
+}

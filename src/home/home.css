@@ -1,0 +1,77 @@
+/* home.css */
+
+/* إعادة ضبط المارجن والبادينج لكل العناصر */
+* {
+  margin: 0; /* إزالة أي مسافات افتراضية حول كل عنصر */
+  padding: 0; /* إزالة أي مسافات داخلية افتراضية */
+  box-sizing: border-box; /* يجعل padding والحدود جزء من حجم العنصر */
+}
+
+/* الخط العام ولون الخلفية لكل الصفحة */
+body {
+  font-family: 'Cinzel', serif;
+
+  overflow-x: hidden; /* منع أي تمرير أفقي حتى لو تجاوز المحتوى العرض */
+  overflow-y: auto; /* السماح بالتمرير العمودي فقط عند الحاجة */
+
+}
+
+/* مثال على روابط الهيدر */
+.header .nav-links a {
+  text-decoration: none; /* إزالة الخط تحت الروابط */
+ 
+  margin-right: 15px; /* مسافة بين الروابط */
+  font-weight: 500; /* سمك الخط */
+  text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.1);
+}
+.header .nav-links a:hover {
+  color: #B8860B; /* ذهبي أغمق عند الوقوف بالماوس */
+
+
+}
+.home-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /* عشان ميطلعش الفيديو برا */
+}
+
+.background-video {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover; /* يخلي الفيديو يغطي الشاشة بالكامل */
+  z-index: -1; /* يخلي الفيديو خلف كل العناصر */
+  opacity: 0; /* فيديو مخفي مبدئيًا */
+}
+
+
+.content {
+  position: relative;
+  z-index: 10; /* يخلي المحتوى فوق الفيديو */
+}
+
+
+body::-webkit-scrollbar {
+  width: 10px;
+}
+
+
+
+body::-webkit-scrollbar-track {
+  background: #ffffff; /* تراك أبيض ليختفي مع الخلفية */
+}
+
+body::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #D4AF37, #B8860B); /* سكرول ذهبي متدرج */
+  border-radius: 10px;
+  border: 2px solid #ffffff; /* فاصل أبيض بين السكرول والحافة */
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background: #5c3d00;
+}
+
+/* تنسيق إضافي للعناوين الكبيرة لتظهر بشكل فخم */

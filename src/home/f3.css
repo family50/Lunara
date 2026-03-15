@@ -1,0 +1,314 @@
+.f3 {
+  padding: 60px;                    /* مسافة داخلية مناسبة لنص بعرض 50% */
+}
+
+/* كرت المنتج */
+.product-card {
+  width: 65%;                       /* الكارت يأخذ نصف الصفحة */
+  display: flex;                    /* تفعيل Flexbox */
+  flex-direction: column;           /* ترتيب عمودي */
+  gap: 22px;                        /* مسافة متوازنة بين العناصر */
+  font-family: 'Cinzel', serif;     /* خط فاخر */
+ color: #D4AF37;                  /* لون النص الذهبي */
+  text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.02);
+  margin-left: 60px;
+}
+
+/* عنوان المنتج */
+.product-title {
+  font-size: 50px;                  /* حجم كبير يناسب نصف الشاشة */
+  letter-spacing: 3px;              /* مسافة بين الحروف */
+  font-weight: 800;                 /* خط ثقيل */
+  color: #D4AF37;
+     background: linear-gradient(to right, #D4AF37 20%, #F7EF8A 50%, #D4AF37 80%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block; 
+}
+
+/* وصف المنتج */
+.product-desc {
+  font-size: 23px;                  /* نص مريح للقراءة */
+  line-height: 1.7;                 /* ارتفاع السطر */
+  opacity: 0.85;                    /* تهدئة اللون */
+  max-width: 90%;                   /* منع تمدد النص زيادة */
+}
+
+/* حاوية الأزرار */
+.product-actions {
+  display: flex;                    /* Flexbox */
+  flex-direction: column;           /* الأزرار تحت بعض */
+  gap: 18px;                        /* مسافة واضحة */
+  margin-top: 24px;                 /* فصل عن النص */
+}
+
+/* ستايل مشترك لكل زر */
+.btn {
+  display: flex;                    /* ترتيب الأيقونة والنص */
+  align-items: center;              /* توسيط رأسي */
+  justify-content: center;          /* توسيط أفقي */
+  gap: 12px;                        /* مسافة بين الأيقونة والنص */
+  padding: 18px 26px;               /* حجم زر مناسب لواجهة فخمة */
+  font-size: 20px;                  /* حجم النص */
+  font-family: 'Cinzel', serif;     /* نفس الخط */
+  letter-spacing: 1.5px;            /* إحساس Premium */
+  cursor: pointer;                  /* مؤشر يد */
+  transition: all 0.35s ease;       /* حركة ناعمة */
+  border-radius: 3px;               /* حواف بسيطة */
+}
+
+/* أيقونات Font Awesome */
+.btn i {
+  font-size: 21px;                  /* تكبير الأيقونة */
+}
+
+/* زر إضافة إلى العربة */
+.add-to-cart {
+  background: transparent;          /* بدون خلفية */
+border: 1.5px solid #D4AF37;
+  color: #D4AF37;                  /* لون النص */
+}
+
+/* Hover زر الإضافة */
+.add-to-cart:hover {
+ background: rgba(212, 175, 55, 0.08); /* خلفية ذهبية باهتة */
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(212, 175, 55, 0.15);
+}
+
+/* زر الشراء الآن */
+.buy-now {
+  background: #deb11b; /* خلفية ذهبية كاملة */
+  border: 2px solid #D4AF37;
+ color: #ffffff; /* نص أبيض لنقاء التصميم */                  /* لون كريمي */
+  position: relative;               /* لتفعيل تأثير اللمعة */
+  overflow: hidden;                 /* إخفاء الزيادة */
+}
+.buy-now:hover {
+  background: #B8860B; /* ذهبي أعمق عند الوقوف */
+  border-color: #B8860B;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(184, 134, 11, 0.3);
+}
+
+/* تأثير اللمعة */
+.buy-now::after {
+  content: "";                      /* عنصر وهمي */
+  position: absolute;               /* وضع مطلق */
+  top: 0;                           /* من أعلى */
+  left: -120%;                      /* خارج الزر */
+  width: 120%;                      /* عرض أكبر للحركة */
+  height: 100%;                     /* نفس الارتفاع */
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.6), /* زيادة شدة اللمعة */
+    transparent
+  );
+  transition: all 0.6s ease;
+}
+
+/* تحريك اللمعة عند hover */
+.buy-now:hover::after {
+  left: 120%;                       /* تمر عبر الزر */
+}
+
+/* حركة الزر */
+.buy-now:hover {
+  transform: translateY(-3px);      /* إحساس زر Premium */
+}
+.product-price {
+
+  color: #e5a70a; /* درجة أغمق قليلاً للسعر للتمييز */
+
+}
+/* تنسيقات للشاشات أقل من 1040px */
+@media (max-width: 1040px) {
+
+  .f3 {
+    padding: 40px;                  /* تقليل المسافة الداخلية */
+   margin-top: 60px;
+  
+  }
+
+  .product-card {
+    width: 65%;                      /* أصغر من الأصل */
+    gap: 18px;                       /* تقليل الفجوات بين العناصر */
+                   /* لون النص الذهبي */
+  
+  margin-left: 37px;
+
+  }
+
+  .product-title {
+    font-size: 40px;                 /* أصغر العنوان */
+    letter-spacing: 2px;             /* تقليل المسافة بين الحروف */
+  }
+
+  .product-desc {
+    font-size: 18px;                 /* تصغير النص */
+    line-height: 1.6;                /* تعديل ارتفاع السطر */
+    max-width: 95%;                  /* منع تمدد النص زيادة */
+  }
+
+  .product-actions {
+    gap: 14px;                       /* تقليل المسافة بين الأزرار */
+    margin-top: 18px;                /* تقليل الفصل عن النص */
+  }
+
+  .btn {
+    padding: 14px 20px;              /* تقليل حجم الزر */
+    font-size: 16px;                 /* تصغير النص داخل الزر */
+    gap: 8px;                        /* مسافة أقل بين الأيقونة والنص */
+    border-radius: 2px;              /* حواف أصغر قليلًا */
+  }
+
+  .btn i {
+    font-size: 18px;                 /* تصغير الأيقونة */
+  }
+}
+/* تنسيقات للشاشات أقل من 870px */
+@media (max-width: 870px) {
+
+  .f3 {
+    padding: 30px;                  /* تقليل المسافة الداخلية */
+    margin-top: 0px;
+   
+    height: 420px;
+  }
+
+
+  .product-card {
+    width: 65%;                      /* الكارت أصغر لكن لا يزال يملأ مساحة الشاشة بشكل جميل */
+    gap: 16px;                       /* تقليل الفجوات بين العناصر */
+  }
+
+  .product-title {
+    font-size: 32px;                 /* تصغير العنوان */
+    letter-spacing: 1.5px;           /* تقليل المسافة بين الحروف */
+  }
+
+  .product-desc {
+    font-size: 16px;                 /* تصغير النص */
+    line-height: 1.5;                /* تعديل ارتفاع السطر */
+    max-width: 100%;                 /* عرض كامل تقريبا */
+  }
+
+  .product-actions {
+    gap: 12px;                       /* تقليل المسافة بين الأزرار */
+    margin-top: 14px;                /* تقليل الفصل عن النص */
+  }
+
+  .btn {
+    padding: 12px 18px;              /* تقليل حجم الزر */
+    font-size: 14px;                 /* تصغير النص داخل الزر */
+    gap: 6px;                         /* مسافة أقل بين الأيقونة والنص */
+    border-radius: 2px;              /* حواف أصغر */
+  }
+
+  .btn i {
+    font-size: 16px;                 /* تصغير الأيقونة */
+  }
+}
+/* تنسيقات للشاشات أقل من 730px */
+@media (max-width: 730px) {
+
+  .f3 {
+    padding: 24px;                  /* تقليل المسافة الداخلية أكثر */
+    margin-top: -60px;               /* تقليل المسافة العلوية */
+  }
+
+  .product-card {
+                         /* الكارت يملأ معظم العرض */
+    gap: 14px;                      /* فجوات أصغر */
+  }
+
+  .product-title {
+    font-size: 26px;                /* تصغير العنوان بتوازن */
+    letter-spacing: 1.2px;          /* تقليل المسافة بين الحروف */
+  }
+
+  .product-desc {
+    font-size: 14px;                /* نص أصغر للموبايل/تابلت */
+    line-height: 1.45;              /* قراءة مريحة */
+    max-width: 100%;
+  }
+
+  .product-actions {
+    gap: 10px;                      /* تقليل المسافة بين الأزرار */
+    margin-top: 12px;
+  }
+
+  .btn {
+    padding: 10px 16px;             /* أزرار أصغر لكن لسه مريحة */
+    font-size: 13px;                /* حجم نص متناسق */
+    gap: 6px;
+    letter-spacing: 1px;            /* إحساس Premium محافظ عليه */
+  }
+
+  .btn i {
+    font-size: 15px;                /* تصغير الأيقونة */
+  }
+}
+/* تنسيقات للشاشات أقل من 550px */
+@media (max-width: 550px) {
+
+  .f3 {
+    padding: 20px;                  /* تصغير المسافة الداخلية */
+    width: 95%;             /* تقليل المسافة العلوية */
+  }
+
+  .product-card {
+                       /* استغلال كامل العرض */
+    gap: 14px;                      /* فجوات متوازنة */
+  }
+
+  .product-title {
+    font-size: 20px;                /* تصغير متناسق للعنوان */
+    letter-spacing: 1px;            /* الحفاظ على الإحساس الفاخر */
+  }
+
+  .product-desc {
+    font-size: 11px;                /* نص مريح للموبايل */
+    line-height: 1.45;
+    max-width: 100%;
+  }
+
+  .product-actions {
+    gap: 10px;
+    margin-top: 12px;
+  }
+
+  .btn {
+    padding: 7px 12px;             /* أزرار مناسبة للإبهام */
+    font-size: 13px;
+    gap: 6px;
+    border-radius: 2px;
+  }
+
+  .btn i {
+    font-size: 15px;
+  }
+}
+.product-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+/* الكانفاس */
+.product-canvas {
+  width: 45%;
+  height:400px ;
+  position: relative;
+}
+
+.product-canvas canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain; /* يحافظ على نسبة العرض/الارتفاع */
+}
+
+
